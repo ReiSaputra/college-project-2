@@ -14,5 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingPage');
+})->name("landing");
+
+Route::fallback(function () {
+    return view("fallback");
+})->name("fallback");
+
+Route::get("/part", function () {
+    return view("participant");
 });
+
+Route::get("/ment", function () {
+    return view("mentor");
+});
+
