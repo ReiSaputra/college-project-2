@@ -14,8 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landingPage');
-})->name("landing");
+    return view("layouts.landingPage");
+})->name("landing.index");
+
+Route::get('/about', function () {
+    return view("layouts.landingPage");
+})->name("landing.about");
+
+// Route::get('/lorem', function () {
+//     return view("layouts.landingPage");
+// })->name("landing.lorem");
+
+// Route::get('/', function () {
+//     return view("layouts.landingPage");
+// })->name("landing.ipsum");
 
 Route::fallback(function () {
     return view("fallback");
