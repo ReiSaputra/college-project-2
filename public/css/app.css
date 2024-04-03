@@ -1,61 +1,14 @@
 /* 
-    Global
-*/  
+    Global Page
+*/
 /*
+    Typeface
     <uniquifier>: Use a unique and descriptive class name
-    <weight>: Choose different value from below
+    <weight>: Use a value from 100 to 900
 */
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
   font-style: normal;
 }
 
@@ -65,10 +18,22 @@
   font-style: italic;
 }
 
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
 .poppins-extralight-italic {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-style: italic;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .poppins-light-italic {
@@ -77,10 +42,22 @@
   font-style: italic;
 }
 
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .poppins-regular-italic {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: italic;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .poppins-medium-italic {
@@ -89,10 +66,22 @@
   font-style: italic;
 }
 
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .poppins-semibold-italic {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: italic;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .poppins-bold-italic {
@@ -101,10 +90,22 @@
   font-style: italic;
 }
 
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
 .poppins-extrabold-italic {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-style: italic;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
 .poppins-black-italic {
@@ -112,16 +113,49 @@
   font-weight: 900;
   font-style: italic;
 }
-
-/*
+/* 
+    Icon
+*/
+.material-symbols-outlined {
+    height: 32px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+/* 
     Landing Page
 */
-html {
-    background-color: yellowgreen;
+.row {
+    height: 70vh;
 }
-.itemm {
-    color: blue;
+.px-custom-left {
+    padding-left: 35px;
 }
-/*
-    Main Page
-*/
+
+.img-custom-size {
+    width: 85%;
+}
+.button-solid {
+    background-color: #941BBD;
+}
+.button-outline {
+    border: 1px solid #941BBD;
+}
+.text-white {
+    color: white;
+}
+.text-purple {
+    color: #941BBD;
+}
+.text-grey {
+    color: #6d6d6d;
+}
+.join {
+    text-decoration: none;
+    color: black;
+}
+.highlight-disable {
+  user-select: none;
+}

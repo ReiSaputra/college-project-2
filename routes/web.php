@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\exampleMailController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,20 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view("layouts.landingPage");
-})->name("landing.index");
+    return view('layouts.landingPage');
+})->name("landing");
 
 Route::get('/about', function () {
-    return view("layouts.landingPage");
-})->name("landing.about");
-
-// Route::get('/lorem', function () {
-//     return view("layouts.landingPage");
-// })->name("landing.lorem");
-
-// Route::get('/', function () {
-//     return view("layouts.landingPage");
-// })->name("landing.ipsum");
+    return view('layouts.landingPage');
+})->name("landing");
 
 Route::fallback(function () {
     return view("fallback");
@@ -41,3 +35,4 @@ Route::get("/ment", function () {
     return view("mentor");
 });
 
+Route::get("/test", [exampleMailController::class, "sendEmail"]);
