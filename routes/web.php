@@ -20,12 +20,8 @@ Route::get('/', function () {
 })->name("landing");
 
 Route::get('/about', function () {
-    return view('layouts.landingPage');
+    return view('mentor');
 })->name("landing");
-
-Route::fallback(function () {
-    return view("fallback");
-})->name("fallback");
 
 Route::get("/part", function () {
     return view("participant");
@@ -35,4 +31,12 @@ Route::get("/ment", function () {
     return view("mentor");
 });
 
+Route::get("role", function () {
+    return view("role");
+});
+
 Route::get("/test", [exampleMailController::class, "sendEmail"]);
+
+Route::fallback(function () {
+    return view("fallback");
+})->name("fallback");
