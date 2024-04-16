@@ -15,5 +15,3 @@
     @include("include.bootstrap")
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @include("include.favicon")
-    <title>Badubii</title>
-</head>

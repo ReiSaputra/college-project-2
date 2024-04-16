@@ -3,8 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
 <body>
     @include("include.nav")
     @yield("container")

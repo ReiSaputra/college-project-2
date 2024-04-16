@@ -1,4 +1,6 @@
 @include("include.landingPage.headLandingPage")
+<title>Role - Badubii</title>
+</head>
 
 <body>
     <header class=" container-fluid text-center">
@@ -21,9 +23,9 @@
                         href="/student/sign-up">
                         <i class="fa-solid fa-graduation-cap fa-2xl"></i>
                         <h5 class="mt-5">Siswa</h5>
-                        <p class="text-grey2">Siswa memiliki tanggung jawab untuk mengikuti kelas, menyelesaikan tugas,
+                        <p class="text-navy">Siswa memiliki tanggung jawab untuk mengikuti kelas, menyelesaikan tugas,
                             berkomunikasi
-                            dengan guru dan sesama siswa,
+                            dengan mentor,
                             memantau kemajuan belajar pribadi, serta berkolaborasi dengan rekan-rekan sekelas dalam
                             proses pembelajaran</p>
                     </a>
@@ -33,10 +35,10 @@
                         href="/mentor/sign-up">
                         <i class="fa-solid fa-chalkboard-user fa-2xl"></i>
                         <h5 class="mt-5">Mentor</h5>
-                        <p class="text-grey2">Mentor bertanggung jawab untuk membuat dan mengelola kelas, mengelola
+                        <p class="text-navy">Mentor bertanggung jawab untuk membuat dan mengelola kelas, mengelola
                             tugas
                             siswa, berinteraksi dengan
-                            siswa, memantau kemajuan mereka, dan berkolaborasi dengan rekan guru dalam meningkatkan
+                            siswa, memantau kemajuan mereka, dan berkolaborasi dengan siswa dalam meningkatkan
                             pembelajaran</p>
                     </a>
                 </div>

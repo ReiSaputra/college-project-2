@@ -1,4 +1,6 @@
 @include("include.landingPage.headLandingPage")
+<title>Badubii</title>
+</head>
 
 <body class="poppins-regular">
     @include("include.landingPage.navLandingPage")
@@ -9,7 +11,8 @@
                 <h6 class="poppins-light text-white mt-2">Temukan Potensi Anda di Sistem Manajemen
                     Pembelajaran Kami
                 </h6>
-                <a class="remove-default-link d-flex align-items-center justify-content-center text-white mt-3" href="">
+                <a class="remove-default-link d-flex align-items-center justify-content-center text-white mt-3"
+                    href="/role">
                     <h6>Gabung di sini</h6>
                     <span class="ms-3 material-symbols-outlined d-inline-block">
                         arrow_forward
@@ -48,7 +51,7 @@
         <section class="container-fluid school-code">
             <div class="row">
                 <div class="col-12 border px-custom-left">
-                    <h3 class="poppins-semibold text-navy" id="school-code">Kode Sekolah</h3>
+                    <h3 class="poppins-semibold text-navy" id="kode-sekolah">Kode Sekolah</h3>
                 </div>
             </div>
             <div class="row mt-5">
