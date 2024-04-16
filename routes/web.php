@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landingPage');
+    return view('layouts.landingPage');
 })->name("landing");
 
 Route::fallback(function () {
