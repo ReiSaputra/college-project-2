@@ -1,3 +1,251 @@
-html {
-    background-color: teal;
+/* 
+    Global Page
+*/
+/*
+    Typeface
+    <uniquifier>: Use a unique and descriptive class name
+    <weight>: Use a value from 100 to 900
+*/
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+/*
+    Gradient
+*/
+.background-gradient {
+  background: rgb(57,106,149);
+  background: linear-gradient(18deg, rgba(57,106,149,1) 0%, rgba(179,43,176,1) 100%);
+}
+/* 
+    Icon
+*/
+.material-symbols-outlined {
+  height: 32px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+/* 
+    Landing Page
+*/
+.header {
+  
+}
+.row-header {
+  height: 70vh;
+}
+.px-custom-left {
+  padding-left: 35px;
+}
+.px-custom-right {
+  padding-right: 35px;
+}
+.mx-custom-left {
+  margin-left: 35px;
+}
+.mx-custom-right {
+  margin-right: 35px;
+}
+.img-custom-size {
+  width: 55%;
+}
+.button-solid {
+  background-color: #941BBD;
+}
+.button-outline {
+  border: 1px solid #941BBD;
+}
+.text-white {
+  color: white;
+}
+.text-purple {
+  color: #941BBD;
+}
+.text-grey {
+  color: #6d6d6d;
+}
+.text-navy {
+  color: #2f2e41;
+}
+.text-grey2{
+  color: #a9a9a9;
+  transition: 0.15s;
+}
+div div p .text-grey2:hover{
+  color: white;
+}
+.solid-purple {
+  background-color: #941BBD;
+}
+.solid-grey {
+  background-color: #6d6d6d;
+}
+.solid-navy {
+  background-color: #2f2e41;
+}
+.remove-default-link {
+  text-decoration: none;
+}
+.highlight-disable {
+  user-select: none;
+}
+header div div img {
+  width: 50%;
+}
+.main {
+  height: 100vh;
+}
+.footer .row {
+  height: 60vh;
+}
+.row div hr {
+  margin: 0 0 0 auto;
+  width: 50%;
+  border: 1px solid white;
+}
+.row div div .default-m-p {
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+span.custom-w-h {
+  width: 25px;
+  height: 25px;
+}
+/*
+  Sign Up Page
+*/
+.test {
+  background-color: aqua;
+}
+header div a img {
+  width: 8%;
+}
+.parent-box {
+  height: 400px;
+}
+main div div div .box {
+  width: 90%;
+  height: 350px;
+}
+.border-role {
+  border: 1.5px solid #a9a9a9;
+  transition: 0.3s;
+}
+.border-role:hover {
+  border: 1.5px solid #941BBD;
+}
+main div div div a.text-navy:hover {
+  color: #941BBD;
+}
+/* 
+  Fallback
+*/
+.fallback {
+  height: 100vh;
 }

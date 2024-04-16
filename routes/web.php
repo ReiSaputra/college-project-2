@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\exampleMailController;
+use App\Http\Controllers\testMailController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,18 +17,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landingPage');
-})->name("landing");
+    return view('layouts.landingPage');
+})->name("landingpage");
 
+Route::get("role", function () {
+    return view("role");
+});
+
+Route::get("/login", function () {
+    return view("login");
+})->name("login");
+
+Route::get("/test-email", [testMailController::class, "sendEmail"]);
+
+/**
+ * 404
+ */
 Route::fallback(function () {
     return view("fallback");
 })->name("fallback");
-
-Route::get("/part", function () {
-    return view("participant");
-});
-
-Route::get("/ment", function () {
-    return view("mentor");
-});
-
