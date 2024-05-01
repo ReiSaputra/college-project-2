@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\exampleMailController;
-use App\Http\Controllers\testMailController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +27,18 @@ Route::get("/login", function () {
     return view("login");
 })->name("login");
 
-Route::get("/test-email", [testMailController::class, "sendEmail"]);
+Route::get("/login", function () {
+    return view("login");
+})->name("login");
+
+Route::get("/sign-up/student", function () {
+    return view("auth.student");
+})->name("login");
+
+Route::get("/sign-up/mentor", function () {
+    return view("auth.mentor");
+})->name("login");
+
 
 /**
  * 404
