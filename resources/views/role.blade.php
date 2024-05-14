@@ -2,7 +2,7 @@
 <title>Role - Badubii</title>
 </head>
 
-<body>
+<body class="role">
     <header class=" container-fluid text-center">
         <div class="px-4 pt-5 pb-4">
             <a class="navbar-brand" href="/">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-6 text-end px-1 parent-box d-flex justify-content-center align-items-center">
                     <a class="border-role text-center box d-flex justify-content-center align-items-center flex-column p-5 rounded-5 remove-default-link text-navy"
-                        href="/student/sign-up">
+                        href="/sign-up/student">
                         <i class="fa-solid fa-graduation-cap fa-2xl"></i>
                         <h5 class="mt-5">Siswa</h5>
                         <p class="text-navy">Siswa memiliki tanggung jawab untuk mengikuti kelas, menyelesaikan tugas,
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-6 px-1 parent-box d-flex justify-content-center align-items-center">
                     <a class="border-role text-center box d-flex justify-content-center align-items-center flex-column p-5 rounded-5 remove-default-link text-navy"
-                        href="/mentor/sign-up">
+                        href="/sign-up/mentor">
                         <i class="fa-solid fa-chalkboard-user fa-2xl"></i>
                         <h5 class="mt-5">Mentor</h5>
                         <p class="text-navy">Mentor bertanggung jawab untuk membuat dan mengelola kelas, mengelola

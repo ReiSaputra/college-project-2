@@ -10,9 +10,16 @@ class testMailController extends Controller
 {
     public function sendEmail(): string
     {
-        $newMail = new testMail(); 
+        $newMail = new testMail();
 
-        Mail::to("hanskysaputra@gmail.com")->send($newMail);
+        $data = "test";
+
+
+
+        // Mail::later(5, $newMail, function use);
+
+        // Mail::to("hanskysaputra@gmail.com")->;
+
         return "Mail successfully sent!";
     }
 }

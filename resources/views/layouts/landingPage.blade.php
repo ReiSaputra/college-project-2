@@ -4,54 +4,103 @@
 
 <body class="poppins-regular">
     @include("include.landingPage.navLandingPage")
-    <header class="header container-fluid background-gradient">
+    <header class="header container-fluid">
         <div class="row row-header">
             <div class="col-6 px-custom-left d-flex justify-content-center align-items-start flex-column">
-                <h1 class="poppins-bold text-white mb-2">Menjadi Terhubung dengan Pengetahuan</h1>
-                <h6 class="poppins-light text-white mt-2">Temukan Potensi Anda di Sistem Manajemen
+                <h1 class="poppins-bold mb-2 text-red">Menjadi Terhubung dengan Pengetahuan</h1>
+                <h6 class="poppins-light mt-2">Temukan Potensi Anda di Sistem Manajemen
                     Pembelajaran Kami
                 </h6>
-                <a class="remove-default-link d-flex align-items-center justify-content-center text-white mt-3"
-                    href="/role">
-                    <h6>Gabung di sini</h6>
-                    <span class="ms-3 material-symbols-outlined d-inline-block">
-                        arrow_forward
-                    </span>
+                <a class="poppins-semibold box-get-started remove-default-link d-flex align-items-center justify-content-center mt-3 px-4 py-3"
+                    href="/role">Gabung di sini
+                    <i class="border ms-3 fa-solid fa-arrow-right-long fa-xl"></i>
                 </a>
             </div>
             <div class="col-6 d-flex justify-content-center align-items-end">
-                <img class="img-fluid img-custom-size highlight-disable"
-                    src="{{ asset('assets/undraw_online_test_re_kyfx.svg') }}" alt="main-image" draggable="false">
+                <img class="img-fluid img-custom-size highlight-disable" src="{{ asset("assets/DrawKit - Education Illustration Pack/SVG/7 SCENE.svg") }}" alt="main-image" draggable="false">
             </div>
         </div>
     </header>
-    <main class="main mt-4">
-        <section class="container-fluid about">
+    <main class="main">
+        <section class="container-fluid next-section">
             <div class="row">
-                <div class="col-12 border px-custom-left">
-                    <h3 class="poppins-semibold text-navy" id="tentang">Tentang</h3>
+                <div class="col-12 px-custom-left px-custom-right">
+                    <div class="drop-bottom d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-angles-down fa-xl"></i>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-6 border px-custom-left">a</div>
-                <div class="col-6 border">a</div>
-            </div>
         </section>
-        <section class="container-fluid role">
+        <section class="container-fluid about-section py-5">
             <div class="row">
-                <div class="col-12 border px-custom-left">
-                    <h3 class="poppins-semibold text-navy" id="peran">Peran</h3>
+                <div
+                    class="col-6 px-custom-left px-custom-right py-5 d-flex justify-content-center align-items-start flex-column col-custom-left">
+                    <h2 class="poppins-semibold text-white py-4" id="tentang">Tentang</h2>
+                    <p class="text-white">Badubii adalah platform inovatif yang didedikasikan untuk memajukan
+                        pembelajaran online. Dengan fokus pada keunggulan dalam manajemen pembelajaran, kami hadir untuk
+                        membantu Anda menciptakan pengalaman belajar yang luar biasa.</p>
+                </div>
+                <div class="col-6 px-custom-right d-flex justify-content-end align-items-center">
+                    <img class="img-fluid" src="{{ asset("assets/DrawKit - Education Illustration Pack/SVG/4 SCENE.svg") }}" alt="image-4">
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-6 border px-custom-left">a</div>
-                <div class="col-6 border">a</div>
+        </section>
+        <section class="container-fluid feature-section py-5 px-5">
+            <div class="card-box d-flex">
+                <div class="card-item d-flex justify-content-start p-4 align-items-center flex-column solid-orange">
+                    <div class="card-item-header d-flex justify-content-center align-items-center ">
+                        <i class="fa-solid fa-xl fa-screwdriver-wrench text-white"></i>
+                    </div>
+                    <div class="card-item-body mt-4 pt-4">
+                        <h4 class="card-item-title text-center text-white poppins-semibold">Kustomisasi LMS secara
+                            fleksibel</h4>
+                        <p class="mt-3 text-center text-white">Jelajahi beragam opsi penyesuaian untuk menciptakan
+                            pengalaman pembelajaran yang sesuai dengan kebutuhan, preferensi, dan tujuan Anda dengan
+                            optimal.</p>
+                    </div>
+                </div>
+                <div class="card-item d-flex justify-content-start p-4 align-items-center flex-column solid-blue">
+                    <div class="card-item-header d-flex justify-content-center align-items-center ">
+                        <i class="fa-brands fa-2xl fa-connectdevelop text-white"></i>
+                    </div>
+                    <div class="card-item-body mt-4 pt-4">
+                        <h4 class="card-item-title text-center poppins-semibold text-white">Berkolaborasi dengan Mentor
+                            dan Siswa Anda</h4>
+                        <p class="mt-3 text-center text-white">Jadilah bagian dari kolaborasi untuk meraih kesuksesan
+                            belajar secara dinamis.</p>
+                    </div>
+                </div>
+                <div class="card-item d-flex justify-content-start p-4 align-items-center flex-column solid-yellow">
+                    <div class="card-item-header d-flex justify-content-center align-items-center ">
+                        <i class="fa-solid fa-xl fa-house-signal"></i>
+                    </div>
+                    <div class="card-item-body mt-4 pt-4">
+                        <h4 class="card-item-title text-center poppins-semibold">Akses dimanapun, kapanpun Anda mau</h4>
+                        <p class="mt-3 text-center">Tingkatkan potensi Anda dengan kemampuan belajar kapan saja, di mana
+                            saja. Mulai perjalanan Anda menuju kesuksesan bersama Badubii.</p>
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="container-fluid school-code">
+        <section class="container-fluid role-section py-5">
+            <div class="row">
+                <div class="col-6 px-custom-left d-flex justify-content-start align-items-center">
+                    <img class="img-fluid" src="{{ asset("assets/DrawKit - Education Illustration Pack/SVG/9 SCENE.svg") }}" alt="image-5">
+                </div>
+                <div
+                    class="col-6 px-custom-right px-custom-left py-5 d-flex justify-content-center align-items-start flex-column col-custom-right">
+                    <h2 class="poppins-semibold text-white py-4" id="peran">Peran</h2>
+                    <p class="text-white">Peran kami adalah menyediakan solusi yang mudah digunakan namun kuat
+                        untuk membantu pendidik dan peserta didik dalam perjalanan pembelajaran online mereka. Kami
+                        percaya bahwa setiap orang memiliki potensi untuk belajar, dan Badubii hadir untuk membuka pintu
+                        kesempatan itu.</p>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid school-code-section py-4">
             <div class="row">
                 <div class="col-12 border px-custom-left">
-                    <h3 class="poppins-semibold text-navy" id="kode-sekolah">Kode Sekolah</h3>
+                    <h2 class="poppins-semibold text-navy" id="kode-sekolah">Kode Sekolah</h2>
                 </div>
             </div>
             <div class="row mt-5">
@@ -67,39 +116,38 @@
                     <img src="{{ asset('assets/badubii-white.png') }}" alt="Footer-Badubii-Logo" width="110">
                 </div>
                 <div class="col-3  px-custom-right pt-5 text-end">
-                    <p class="poppins-medium text-white">TENTANG</p>
+                    <p class="poppins-medium ">TENTANG</p>
                     <hr>
                     <div class=" mt-4">
-                        <p class="poppins-regular text-white  default-m-p"><a class="remove-default-link text-grey2"
-                                href="">Tentang Badubii
+                        <p class="poppins-regular default-m-p"><a class="remove-default-link text-grey2" href="">Tentang
+                                Badubii
                             </a>
                         </p>
-                        <p class="poppins-regular text-white  default-m-p"><a class="remove-default-link text-grey2"
-                                href="">Peran
+                        <p class="poppins-regular default-m-p"><a class="remove-default-link text-grey2" href="">Peran
                             </a>
                         </p>
                     </div>
                 </div>
                 <div class="col-3  px-custom-right pt-5 text-end">
-                    <p class="poppins-medium text-white">SUMBER</p>
+                    <p class="poppins-medium ">SUMBER</p>
                     <hr>
                     <div class=" mt-4">
-                        <p class="poppins-regular text-white  default-m-p"><a class="remove-default-link text-grey2"
+                        <p class="poppins-regular default-m-p"><a class="remove-default-link text-grey2"
                                 href="">Dapatkan Kode Sekolah</a>
                         </p>
-                        <p class="poppins-regular text-white  default-m-p"><a class="remove-default-link text-grey2"
-                                href="">Jadi Mentor</a>
+                        <p class="poppins-regular default-m-p"><a class="remove-default-link text-grey2" href="">Jadi
+                                Mentor</a>
                         </p>
-                        <p class="poppins-regular text-white  default-m-p"><a class="remove-default-link text-grey2"
-                                href="">Jadi Siswa</a>
+                        <p class="poppins-regular default-m-p"><a class="remove-default-link text-grey2" href="">Jadi
+                                Siswa</a>
                         </p>
                     </div>
                 </div>
                 <div class="col-3  px-custom-right pt-5 text-end">
-                    <p class="poppins-medium text-white">MEDIA SOSIAL</p>
+                    <p class="poppins-medium ">MEDIA SOSIAL</p>
                     <hr>
                     <div class=" mt-4">
-                        <p class="poppins-regular text-white default-m-p">
+                        <p class="poppins-regular default-m-p">
                             <a class="remove-default-link text-grey2 d-inline-block" href="">
                                 <span
                                     class="d-inline-block custom-w-h border d-flex justify-content-center align-items-center p-3 rounded-circle">
@@ -107,7 +155,7 @@
                                 </span>
                             </a>
                         </p>
-                        <p class="poppins-regular text-white  default-m-p">
+                        <p class="poppins-regular default-m-p">
                             <a class="remove-default-link text-grey2 d-inline-block" href="">
                                 <span
                                     class="d-inline-block custom-w-h border d-flex justify-content-center align-items-center p-3 rounded-circle">
@@ -115,7 +163,7 @@
                                 </span>
                             </a>
                         </p>
-                        <p class="poppins-regular text-white  default-m-p">
+                        <p class="poppins-regular default-m-p">
                             <a class="remove-default-link text-grey2 d-inline-block" href="">
                                 <span
                                     class="d-inline-block custom-w-h border d-flex justify-content-center align-items-center p-3 rounded-circle">

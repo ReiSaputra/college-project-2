@@ -1,0 +1,26 @@
+/*
+  Sign Up Page
+*/
+.role {
+    height: 100vh;
+}
+header div a img {
+    width: 8%;
+}
+.parent-box {
+    height: 400px;
+}
+main div div div .box {
+    width: 90%;
+    height: 350px;
+}
+.border-role {
+    border: 1.5px solid #a9a9a9;
+    transition: 0.3s;
+}
+.border-role:hover {
+    border: 1.5px solid #941bbd;
+}
+main div div div a.text-navy:hover {
+    color: #941bbd;
+}

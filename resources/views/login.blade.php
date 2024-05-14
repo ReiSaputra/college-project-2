@@ -1,41 +1,5 @@
 @include("include.landingPage.headLandingPage")
 <style>
-    .login {
-        height: 60vh;
-    }
-
-    .input {
-        border: 0;
-        border-bottom: 1.5px solid #a9a9a9;
-        transition: 0.1s;
-    }
-
-    .input:hover {
-        border-bottom: 1.5px solid #941BBD;
-    }
-
-    .input:focus {
-        outline: none;
-    }
-
-    .input::placeholder {
-        font-size: 15px;
-    }
-
-    .form-p {
-        font-size: 13px;
-    }
-
-    .button {
-        border: 0px solid white;
-        border-radius: 10px;
-        background-color: #941BBD;
-        color: white
-    }
-
-    .form-p a {
-        color: #941BBD;
-    }
 </style>
 <title>Role - Badubii</title>
 </head>
