@@ -17,16 +17,9 @@ Route::get('/', function () {
     return view('landingPage');
 })->name("landing");
 
-<<<<<<< Updated upstream
-=======
 Route::get("role", function () {
     return view("role");
 });
-
-Route::get("/login", function () {
-    return view("login");
-})->name("login");
-
 Route::get("/login", function () {
     return view("login");
 })->name("login");
@@ -46,7 +39,6 @@ Route::get("/school-code/help", function (){
 /**
  * 404
  */
->>>>>>> Stashed changes
 Route::fallback(function () {
     return view("fallback");
 })->name("fallback");
