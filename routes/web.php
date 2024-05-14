@@ -17,6 +17,36 @@ Route::get('/', function () {
     return view('landingPage');
 })->name("landing");
 
+<<<<<<< Updated upstream
+=======
+Route::get("role", function () {
+    return view("role");
+});
+
+Route::get("/login", function () {
+    return view("login");
+})->name("login");
+
+Route::get("/login", function () {
+    return view("login");
+})->name("login");
+
+Route::get("/sign-up/student", function () {
+    return view("auth.student");
+})->name("login");
+
+Route::get("/sign-up/mentor", function () {
+    return view("auth.mentor");
+})->name("login");
+
+Route::get("/school-code/help", function (){
+    return view("getSchoolCode");
+});
+
+/**
+ * 404
+ */
+>>>>>>> Stashed changes
 Route::fallback(function () {
     return view("fallback");
 })->name("fallback");

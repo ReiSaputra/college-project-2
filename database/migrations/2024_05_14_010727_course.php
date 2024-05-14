@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        //
+        Schema::create("course", function (Blueprint $table) {
+            $table->id();
+            $table->string("name");
+            $table->text("description");
+            $table->string("token");
+            $table->unsignedBigInteger("id_content");
+            $table->unsignedBigInteger("id_mentor");
+            $table->timestamps();
+            $table->foreign("id_mentor")->references("id")->on("mentor")->onDelete("cascade");
+            $table->foreign("id_content")->references("id")->on("content")->onDelete("cascade");
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        //
+    }
+};
