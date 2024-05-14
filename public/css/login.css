@@ -9,7 +9,7 @@
 }
 
 .input:hover {
-    border-bottom: 1.5px solid #941bbd;
+    border-bottom: 1.5px solid #fe5244;
 }
 
 .input:focus {
@@ -27,10 +27,10 @@
 .button {
     border: 0px solid white;
     border-radius: 10px;
-    background-color: #941bbd;
+    background-color: #fe5244;
     color: white;
 }
 
 .form-p a {
-    color: #941bbd;
+    color: #fe5244;
 }

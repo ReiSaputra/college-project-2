@@ -6,7 +6,7 @@
     <header class=" container-fluid text-center">
         <div class="px-4 pt-5 pb-4">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('assets/badubii-purple.png') }}" alt="Navigation-Badubii-Logo" width="110"
+                <img src="{{ asset('assets/badubii-red.png') }}" alt="Navigation-Badubii-Logo" width="110"
                     class="d-inline-block align-text-top">
             </a>
         </div>

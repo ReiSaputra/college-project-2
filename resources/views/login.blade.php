@@ -8,19 +8,19 @@
     <header class=" container-fluid text-center">
         <div class="px-4 pt-5 pb-4">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('assets/badubii-purple.png') }}" alt="Navigation-Badubii-Logo" width="110"
+                <img src="{{ asset('assets/badubii-red.png') }}" alt="Navigation-Badubii-Logo" width="110"
                     class="d-inline-block align-text-top">
             </a>
         </div>
     </header>
     <main class="login form-log d-flex justify-content-center align-items-center mt-5 flex-column">
-        <h3 class="text-navy poppins-semibold">Selamat datang, kembali</h3>
+        <h3 class="text-navy poppins-semibold">Log In</h3>
         <form class="d-flex justify-content-center align-items-start flex-column mt-2" action="" method="POST"
             style="width: 25%">
             <div class="input-text" style="width: 100%">
-                <label class="mt-2 poppins-light" for="username"><i class="fa-solid fa-user me-2"></i>Username</label>
+                <label class="mt-2 poppins-light" for="username"><i class="fa-solid fa-user me-2"></i>Email</label>
                 <input class="input mt-1 d-block p-1" type="text" name="username" id="username" style="width: 100%"
-                    placeholder="Username">
+                    placeholder="Email">
             </div>
             <div class="input-text" style="width: 100%">
                 <label class="mt-2 poppins-light" for="password"><i class="fa-solid fa-lock me-2"></i>Password</label>
