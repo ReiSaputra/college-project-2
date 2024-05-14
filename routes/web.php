@@ -17,8 +17,6 @@ Route::get('/', function () {
     return view('layouts.landingPage');
 })->name("landing");
 
-<<<<<<< Updated upstream
-=======
 Route::get("/role", function () {
     return view("role");
 });
@@ -34,13 +32,9 @@ Route::get("/part", function () {
 Route::get("/course", function () {
     return view("layouts.course");
 })->name("course");
-
-Route::get("/test-email", [testMailController::class, "sendEmail"]);
-
 /**
  * 404
  */
->>>>>>> Stashed changes
 Route::fallback(function () {
     return view("fallback");
 })->name("fallback");
