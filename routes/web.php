@@ -25,10 +25,6 @@ Route::get("/login", function () {
     return view("login");
 })->name("login");
 
-Route::get("/part", function () {
-    return view("layouts.participant");
-})->name("participant");
-
 Route::get("/course", function () {
     return view("layouts.course");
 })->name("course");
@@ -40,7 +36,7 @@ Route::fallback(function () {
 })->name("fallback");
 
 Route::get("/part", function () {
-    return view("participant");
+    return view("layouts.participant");
 });
 
 Route::get("/ment", function () {
