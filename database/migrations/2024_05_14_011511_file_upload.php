@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('filepath');
             $table->string('filetype')->nullable();
             $table->integer('filesize')->nullable();
+            $table->unsignedBigInteger("id_content");
             $table->timestamps();
+            $table->foreign("id_content")->references("id")->on("content")->onDelete("cascade");
         });
     }
 

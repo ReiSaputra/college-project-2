@@ -15,9 +15,9 @@ return new class extends Migration
         Schema::create("content", function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->unsignedBigInteger("id_file");
+            $table->unsignedBigInteger("id_course");
             $table->timestamps();
-            $table->foreign("id_file")->references("id")->on("file_upload")->onDelete("cascade");
+            $table->foreign("id_course")->references("id")->on("course")->onDelete("cascade");
         });
     }
 
