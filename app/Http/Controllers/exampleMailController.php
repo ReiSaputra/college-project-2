@@ -13,7 +13,7 @@ class exampleMailController extends Controller
     {
         $newMail = new exampleMail();
 
-        Mail::to("fthrn.s14@gmail.com")->send($newMail);
+        Mail::to("hanskysaputra@gmail.com")->send($newMail);
 
         return "Mail successfully sent!";
     }

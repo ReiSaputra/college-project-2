@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <p>Contoh test manajemen kredensial menggunakan email</p>
+    <p>Email telah dikirim melalui view!</p>
 </body>
 
 </html>

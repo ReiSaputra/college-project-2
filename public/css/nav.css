@@ -1,0 +1,47 @@
+.list-custom {
+    list-style-type: none;
+}
+
+.nav-link-custom {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.nav-link-custom:hover {
+    color: #fe5244;
+}
+
+.solid-box-custom {
+    background-color: #fe5244;
+}
+
+.solid-box-custom a.custom-link-hover {
+    color: white;
+    transition: 0.2s;
+    border: 1.5px solid #fe5244;
+}
+
+.solid-box-custom:hover a.custom-link-hover {
+    background-color: #ce3a2d;
+    border-color: #ce3a2d;
+}
+
+.border-box-custom {
+    border: 1.5px solid #fe5244;
+}
+
+.border-box-custom a.custom-link-hover {
+    color: #fe5244;
+    transition: 0.2s;
+}
+
+.border-box-custom:hover a.custom-link-hover {
+    background-color: #fe5244;
+    color: white;
+}
+
+a.custom-link-hover {
+    text-decoration: none;
+}
