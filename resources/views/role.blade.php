@@ -19,7 +19,7 @@
                     <h6 class="text-center text-grey2 poppins-light">Saya akan menjadi ...</h6>
                 </div>
                 <div class="col-6 text-end px-1 parent-box d-flex justify-content-center align-items-center">
-                    <a class="border-role text-center box d-flex justify-content-center align-items-center flex-column p-5 rounded-5 remove-default-link text-navy"
+                    <a class="border-role text-center box d-flex justify-content-center align-items-center flex-column p-5 remove-default-link text-navy"
                         href="/sign-up/student">
                         <i class="fa-solid fa-graduation-cap fa-2xl"></i>
                         <h5 class="mt-5">Siswa</h5>
@@ -31,7 +31,7 @@
                     </a>
                 </div>
                 <div class="col-6 px-1 parent-box d-flex justify-content-center align-items-center">
-                    <a class="border-role text-center box d-flex justify-content-center align-items-center flex-column p-5 rounded-5 remove-default-link text-navy"
+                    <a class="border-role text-center box d-flex justify-content-center align-items-center flex-column p-5 remove-default-link text-navy"
                         href="/sign-up/mentor">
                         <i class="fa-solid fa-chalkboard-user fa-2xl"></i>
                         <h5 class="mt-5">Mentor</h5>

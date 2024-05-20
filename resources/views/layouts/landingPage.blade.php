@@ -45,8 +45,8 @@
                 </div>
             </div>
         </section>
-        <section class="container-fluid feature-section py-5 px-5">
-            <div class="card-box d-flex">
+        <section class="container-fluid feature-section py-5">
+            <div class="card-box d-flex justify-content-evenly flex-wrap">
                 <div class="card-item d-flex justify-content-start p-4 align-items-center flex-column solid-orange">
                     <div class="card-item-header d-flex justify-content-center align-items-center ">
                         <i class="fa-solid fa-xl fa-screwdriver-wrench text-white"></i>
@@ -54,7 +54,7 @@
                     <div class="card-item-body mt-4 pt-4">
                         <h4 class="card-item-title text-center text-white poppins-semibold">Kustomisasi LMS secara
                             fleksibel</h4>
-                        <p class="mt-3 text-center text-white">Jelajahi beragam opsi penyesuaian untuk menciptakan
+                        <p class="mt-4 text-center text-white">Jelajahi beragam opsi penyesuaian untuk menciptakan
                             pengalaman pembelajaran yang sesuai dengan kebutuhan, preferensi, dan tujuan Anda dengan
                             optimal.</p>
                     </div>
@@ -66,7 +66,7 @@
                     <div class="card-item-body mt-4 pt-4">
                         <h4 class="card-item-title text-center poppins-semibold text-white">Berkolaborasi dengan Mentor
                             dan Siswa Anda</h4>
-                        <p class="mt-3 text-center text-white">Jadilah bagian dari kolaborasi untuk meraih kesuksesan
+                        <p class="mt-4 text-center text-white">Jadilah bagian dari kolaborasi untuk meraih kesuksesan
                             belajar secara dinamis.</p>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="card-item-body mt-4 pt-4">
                         <h4 class="card-item-title text-center poppins-semibold">Akses dimanapun, kapanpun Anda mau</h4>
-                        <p class="mt-3 text-center">Tingkatkan potensi Anda dengan kemampuan belajar kapan saja, di mana
+                        <p class="mt-4 text-center">Tingkatkan potensi Anda dengan kemampuan belajar kapan saja, di mana
                             saja. Mulai perjalanan Anda menuju kesuksesan bersama Badubii.</p>
                     </div>
                 </div>
@@ -97,27 +97,41 @@
                 </div>
             </div>
         </section>
-        <section class="container-fluid school-code-section py-4">
+        <section class="container-fluid school-code-section py-5 my-5">
             <div class="row">
-                <div class="col-12 border px-custom-left">
-                    <h2 class="poppins-semibold text-navy" id="kode-sekolah">Kode Sekolah</h2>
+                <div class="col-12 border px-custom-left text-center school-code-row d-flex justify-content-center align-items-center position-relative">
+                    {{-- <img class="arrow arrow-1 img-fluid position-absolute" src="{{ asset("assets/arrow/arrow-with-scribble-svgrepo-com.svg") }}" alt=""> --}}
+                    <img class="arrow arrow-2 img-fluid position-absolute" src="{{ asset("assets/arrow/right-drawn-arrow.svg") }}" alt="">
+                    <img class="arrow arrow-3 img-fluid position-absolute" src="{{ asset("assets/arrow/up-arrow.svg") }}" alt="">
+                    <h2 class="poppins-semibold text-red" id="kode-sekolah">Kode Sekolah</h2>
                 </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-6 border px-custom-left">a</div>
-                <div class="col-6 border">a</div>
+                <div class="col-12 border px-custom-left px-custom-right text-center">
+                    <p>Cari kode sekolah anda melalui form di bawah ini.</p>
+                </div>
+                <div class="col-12 py-3 border px-custom-left px-custom-right text-center school-code-box-form d-flex justify-content-center align-items-center">
+                    <form class="school-code-form" action="{{--  --}}" method="post">
+                        @csrf
+                        <div class="email d-flex justify-content-center align-items-center">
+                            <div class="label-box p-2">
+                                <label for="school-code-label"><i class="fa-solid fa-school fa-lg"></i></label>
+                            </div>
+                            <input type="text" id="school-code-label" placeholder="Nama Sekolah">
+                        </div>
+                        <button class="mt-3 py-3" type="submit">Cari</button>
+                    </form>
+                </div>
+                <p class="text-center">Tidak ada? Kontak <a href="/school-code/help">Administrator</a></p>
             </div>
         </section>
     </main>
     <footer class="footer solid-navy">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3  px-custom-left pt-5">
+                <div class="col-3 px-custom-left pt-5">
                     <img src="{{ asset('assets/badubii-white.png') }}" alt="Footer-Badubii-Logo" width="110">
                 </div>
-                <div class="col-3  px-custom-right pt-5 text-end">
+                <div class="col-3  px-custom-right pt-5 text-start">
                     <p class="poppins-medium ">TENTANG</p>
-                    <hr>
                     <div class=" mt-4">
                         <p class="poppins-regular default-m-p"><a class="remove-default-link text-grey2" href="">Tentang
                                 Badubii
@@ -128,9 +142,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-3  px-custom-right pt-5 text-end">
+                <div class="col-3 px-custom-right pt-5 text-start">
                     <p class="poppins-medium ">SUMBER</p>
-                    <hr>
                     <div class=" mt-4">
                         <p class="poppins-regular default-m-p"><a class="remove-default-link text-grey2"
                                 href="">Dapatkan Kode Sekolah</a>
@@ -143,9 +156,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-3  px-custom-right pt-5 text-end">
+                {{-- <div class="col-3  px-custom-right pt-5 text-start">
                     <p class="poppins-medium ">MEDIA SOSIAL</p>
-                    <hr>
                     <div class=" mt-4">
                         <p class="poppins-regular default-m-p">
                             <a class="remove-default-link text-grey2 d-inline-block" href="">
@@ -172,7 +184,7 @@
                             </a>
                         </p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </footer>

@@ -8,7 +8,8 @@
     <header class=" container-fluid text-center">
         <div class="px-4 pt-5 pb-4">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset("assets/badubii-red.png") }}" alt="Navigation-Badubii-Logo" width="110" class="d-inline-block align-text-top">
+                <img src="{{ asset("assets/badubii-red.png") }}" alt="Navigation-Badubii-Logo" width="110"
+                    class="d-inline-block align-text-top">
             </a>
         </div>
     </header>
@@ -25,15 +26,15 @@
                             <div class="label-box p-2">
                                 <label for="school-code-label"><i class="fa-solid fa-school fa-lg"></i></label>
                             </div>
-                            <input type="text" name="email" id="school-code-label" placeholder="Email">
+                            <input type="text" id="school-code-label" placeholder="Nama Sekolah">
                         </div>
                         <div class="email mt-2 d-flex justify-content-center align-items-center">
                             <div class="label-box p-2">
                                 <label for="school-code-label"><i class="fa-solid fa-school fa-lg"></i></label>
                             </div>
-                            <input type="text" name="password" id="school-code-label" placeholder="Password">
+                            <input type="text" id="school-code-label" placeholder="Buat Sekolah">
                         </div>
-                        <button class="mt-3 py-3" type="submit">Masuk</button>
+                        <button class="mt-3 py-3" type="submit">Cari</button>
                     </form>
                 </div>
             </div>
