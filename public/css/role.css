@@ -19,8 +19,8 @@ main div div div .box {
     transition: 0.3s;
 }
 .border-role:hover {
-    border: 1.5px solid #941bbd;
+    border: 1.5px solid #fe5244;
 }
 main div div div a.text-navy:hover {
-    color: #941bbd;
+    color: #fe5244;
 }

@@ -19,13 +19,9 @@ Route::get('/', function () {
     return view('layouts.landingPage');
 })->name("landingpage");
 
-Route::get("role", function () {
+Route::get("/role", function () {
     return view("role");
 });
-
-Route::get("/login", function () {
-    return view("login");
-})->name("login");
 
 Route::get("/login", function () {
     return view("login");
@@ -38,7 +34,6 @@ Route::get("/sign-up/student", function () {
 Route::get("/sign-up/mentor", function () {
     return view("auth.mentor");
 })->name("login");
-
 
 /**
  * 404
