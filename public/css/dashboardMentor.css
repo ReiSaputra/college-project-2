@@ -1,0 +1,36 @@
+.dashboard {
+    /* background-color: antiquewhite; */
+    height: 100vh;
+}
+
+.profile .profile-pic {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.profile h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.profile p {
+    font-size: 0.9rem;
+}
+
+.tab {
+    width: 100%;
+    background-color: rgb(217, 217, 217);
+}
+
+.logo {
+    height: 49px;
+    /* border: 1px solid black; */
+    background-color: rgb(217, 217, 217);
+}
+
+.create-course {
+    /* width: 120px; */
+}

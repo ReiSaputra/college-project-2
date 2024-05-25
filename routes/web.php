@@ -27,13 +27,28 @@ Route::get("/login", function () {
     return view("login");
 })->name("login");
 
+// Student
 Route::get("/sign-up/student", function () {
     return view("auth.student");
-})->name("login");
+})->name("sign.student");
 
+// Dashboard
+Route::get("/participant/{id}/dashboard", function () {
+    return view("dashboard.participantDashboard");
+});
+
+Route::get("/mentor/{id}/dashboard", function () {
+    return view("dashboard.mentorDashboard");
+});
+
+Route::get("/mentor/{id}/course/create", function () {
+    return view("welcome");
+});
+
+// Mentor
 Route::get("/sign-up/mentor", function () {
     return view("auth.mentor");
-})->name("login");
+})->name("sign.mentor");
 
 /**
  * 404
