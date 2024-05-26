@@ -6,35 +6,43 @@
     <div class="dashboard">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2 border menu px-4 py-4">
-                    <div class="logo d-flex align-items-center">
-                        <img class="border" src="{{ asset("assets/badubii-red.png") }}" alt="logo" width="110">
-                    </div>
-                    <a class="create-course mt-3 border d-flex p-2 justify-content-evenly align-items-center" href="{{ url('/mentor/' . "al" . '/course/create') }}">
-                        <i class="fa-solid fa-plus"></i>
-                        <h6>Buat<br/>Kursus</h6>
-                    </a>
-                    <div class="feature-link border mt-3">
-                        <a href="dashboard">Dasboard</a>
-                    </div>
-                </div>
+                @include("include.dashboard.mentor")
                 <div class="col-10 border dashboard px-5 py-4">
                     <div class="tab">
                         <div class="profile-box d-flex justify-content-end">
                             <div class="profile border d-flex text-end align-items-center">
                                 <div class="name me-2">
-                                    <p class="border poppins-semibold">Nama</p>
+                                    <p class="border poppins-semibold"><a href="">Nama</a></p>
                                     <p class="border poppins-light">Status Role</p>
                                 </div>
                                 <img class="rounded-circle profile-pic" src="" alt="">
+                                <i class="fa-solid fa-chevron-down ms-2 fa-xs"></i>
                             </div>
                         </div>
                     </div>
-                    <div class="title-dashboard border rounded p-4 mt-3">
+                    <div class="title-dashboard border p-4 mt-3">
                         <h2 class="poppins-semibold">Halo, Nama!</h2>
                         <h6 class="poppins-light">Siap untuk mengajar hari ini?</h6>
                     </div>
                     <h6 class="mt-3">Overview</h6>
+                    <div class="row border mt-1 box-course overflow-auto">
+                        {{-- For Each setiap judul coursenya --}}
+                        <div class="col-6 mt-2">
+                            <div class="course-content border p-3">
+                                <a href="{{ url('/mentor/' . "al" . '/course/name-content') }}">test</a>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <div class="course-content border p-3">
+                                <a href="name-content">test</a>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <div class="course-content border p-3">
+                                <a href="name-content">test</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

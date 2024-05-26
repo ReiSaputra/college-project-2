@@ -33,11 +33,11 @@ Route::get("/sign-up/student", function () {
 })->name("sign.student");
 
 // Dashboard
-Route::get("/participant/{id}/dashboard", function () {
+Route::get("/participant/{id}/class", function () {
     return view("dashboard.participantDashboard");
 });
 
-Route::get("/mentor/{id}/dashboard", function () {
+Route::get("/mentor/{id}/class", function () {
     return view("dashboard.mentorDashboard");
 });
 
