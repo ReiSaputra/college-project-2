@@ -24,12 +24,12 @@
             </ul>
         </div>
         @endif
-        <form class="d-flex justify-content-center align-items-start flex-column mt-2" action="{{ route('student.register.post') }}" method="POST" style="width: 25%">
+        <form class="d-flex justify-content-center align-items-start flex-column mt-2" action="{{ route('mentor.register.post') }}" method="POST" style="width: 25%">
             @csrf
             <div class="input-text" style="width: 100%">
                 <label class="mt-2 poppins-light" for="name"><i class="fa-solid fa-user me-2"></i>Name</label>
                 <input class="input mt-1 d-block p-1" type="text" name="name" id="name" style="width: 100%" placeholder="Name" value="{{ old('name') }}" required>
-            </div>532.
+            </div>
             <div class="input-text" style="width: 100%">
                 <label class="mt-2 poppins-light" for="email"><i class="fa-solid fa-envelope me-2"></i>Email</label>
                 <input class="input mt-1 d-block p-1" type="email" name="email" id="email" style="width: 100%" placeholder="Email" value="{{ old('email') }}" required>

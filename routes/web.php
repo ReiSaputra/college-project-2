@@ -29,29 +29,44 @@ Route::get("/login", function () {
 })->name("login");
 // Route::post()
 
+// Student
 Route::get("/sign-up/student", function () {
     return view("auth.student");
 })->name("student.register");
 
-Route::get("/sign-up/mentor", function () {
+// Route untuk menangani pendaftaran siswa (POST)
+Route::post('/sign-up/student', [AuthController::class, 'registerStudent'])->name('student.register.post');
+
+// Route untuk menangani pendaftaran mentor (POST)
+Route::post('/sign-up/mentor', [AuthController::class, 'registerMentor'])->name('mentor.register.post');
+
+// Route untuk menangani login (POST)
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+
+// Mentor
+Route::get("/sign-up/student", function () {
     return view("auth.mentor");
 })->name("mentor.register");
 
-// Route untuk proses pendaftaran
-Route::post('/sign-up/student', [AuthController::class, 'registerStudent'])->name('student.register.post');
-Route::post('/sign-up/mentor', [AuthController::class, 'registerMentor'])->name('student.register.post');
 
-Route::get("/school-code/help", function (){
-    return view("getSchoolCode");
+/// Route untuk dashboard participant
+Route::get('/participant/{id}/dashboard', function ($id) {
+    return view('dashboard.participantDashboard', ['id' => $id]);
+})->name('participant.dashboard')->middleware('auth');
+
+// Route untuk dashboard mentor
+Route::get('/mentor/{id}/dashboard', function ($id) {
+    return view('dashboard.mentorDashboard', ['id' => $id]);
+})->name('mentor.dashboard')->middleware('auth');
+
+Route::get("/mentor/{id}/course/create", function () {
+    return view("welcome");
 });
 
-Route::get('/mentor', function() {
-    return view("mentor");
-})->middleware('role:1');
-
-Route::get('/part', function() {
-    return view("participant");
-})->middleware('role:2');
+// Mentor
+Route::get("/sign-up/mentor", function () {
+    return view("auth.mentor");
+})->name("login");
 
 /**
  * 404

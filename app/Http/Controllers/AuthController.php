@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
+use Illuminate\Validation\Validator;
 
 class AuthController extends Controller
 {
@@ -65,16 +66,32 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        $validator = FacadesValidator::make($request->all(), [
+            'email' => 'required|string|email',
+            'password' => 'required|string|min:8',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('');
+            // Authentication passed
+            $user = Auth::user();
+
+            if ($user->role === 'mentor') {
+                return redirect()->route('mentor.dashboard', ['id' => $user->id]);
+            } elseif ($user->role === 'student') {
+                return redirect()->route('participant.dashboard', ['id' => $user->id]);
+            } else {
+                // Default redirect if role is unknown
+                return redirect()->route('landing');
+            }
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->withInput();
+        return redirect()->back()->with('error', 'Invalid credentials');
     }
 
     public function logout(Request $request)

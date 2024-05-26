@@ -19,7 +19,7 @@
                 </div>
                 <div
                     class="col-12 py-3 px-custom-left px-custom-right text-center school-code-box-form d-flex justify-content-center align-items-center">
-                    <form class="school-code-form" action="{{--  --}}" method="post">
+                    <form class="school-code-form" action="{{ route('login.post') }}" method="post">
                         @csrf
                         <div class="email d-flex justify-content-center align-items-center">
                             <div class="label-box p-2">
