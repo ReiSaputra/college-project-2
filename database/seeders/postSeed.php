@@ -14,7 +14,7 @@ class postSeed extends Seeder
     public function run(): void
     {
         DB::table("post")->insert([
-            "judu"
-        ])
+            "judul"
+        ]);
     }
 }
