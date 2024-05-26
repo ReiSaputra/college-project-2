@@ -17,8 +17,16 @@
             <div class="row">
                 <div class="col-12 px-custom-left px-custom-right text-center">
                 </div>
-                <div
-                    class="col-12 py-3 px-custom-left px-custom-right text-center school-code-box-form d-flex justify-content-center align-items-center">
+                <div class="col-12 py-3 px-custom-left px-custom-right text-center school-code-box-form d-flex justify-content-center align-items-center">
+                    @if ($errors->any())
+                    <div>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li> {{ $error}} </li>    
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <form class="school-code-form" action="{{ route('login.post') }}" method="post">
                         @csrf
                         <div class="email d-flex justify-content-center align-items-center">
@@ -31,7 +39,7 @@
                             <div class="label-box p-2">
                                 <label for="school-code-label"><i class="fa-solid fa-school fa-lg"></i></label>
                             </div>
-                            <input type="text" name="password" id="school-code-label" placeholder="Password">
+                            <input type="password" name="password" id="school-code-label" placeholder="Password">
                         </div>
                         <button class="mt-3 py-3" type="submit">Masuk</button>
                     </form>

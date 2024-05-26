@@ -55,7 +55,7 @@ Route::get('/participant/{id}/dashboard', function ($id) {
 })->name('participant.dashboard')->middleware('auth');
 
 // Route untuk dashboard mentor
-Route::get('/mentor/{id}/dashboard', function ($id) {
+Route::get('/mentor/{id}/course/dashboard', function ($id) {
     return view('dashboard.mentorDashboard', ['id' => $id]);
 })->name('mentor.dashboard')->middleware('auth');
 
@@ -66,7 +66,7 @@ Route::get("/mentor/{id}/course/create", function () {
 // Mentor
 Route::get("/sign-up/mentor", function () {
     return view("auth.mentor");
-})->name("login");
+})->name("sign-in.mentor");
 
 /**
  * 404

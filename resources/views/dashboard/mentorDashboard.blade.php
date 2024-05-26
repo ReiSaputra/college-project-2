@@ -23,18 +23,37 @@
                         <div class="profile-box d-flex justify-content-end">
                             <div class="profile border d-flex text-end align-items-center">
                                 <div class="name me-2">
-                                    <p class="border poppins-semibold">{{ Auth::user()->name }}</p>
+                                    <p class="border poppins-semibold"><a href="">{{ Auth::user()->name }}#{{ Auth::user()->id }}</a></p>
                                     <p class="border poppins-light">{{ Auth::user()->role }}</p>
                                 </div>
                                 <img class="rounded-circle profile-pic" src="{{ Auth::user()->profile_pic }}" alt="">
+                                <i class="fa-solid fa-chevron-down ms-2 fa-xs"></i>
                             </div>
                         </div>
                     </div>
                     <div class="title-dashboard border rounded p-4 mt-3">
-                        <h2 class="poppins-semibold">Halo, {{ Auth::user()->name }}!</h2>
+                        <h2 class="poppins-semibold">Halo, {{ Auth::user()->name }}#{{ Auth::user()->id }}!</h2>
                         <h6 class="poppins-light">Siap untuk mengajar hari ini?</h6>
                     </div>
                     <h6 class="mt-3">Overview</h6>
+                    <div class="row border mt-1 box-course overflow-auto">
+                        {{-- For Each setiap judul coursenya --}}
+                        <div class="col-6 mt-2">
+                            <div class="course-content border p-3">
+                                <a href="{{ url('/mentor/' . "al" . '/course/name-content') }}">test</a>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <div class="course-content border p-3">
+                                <a href="name-content">test</a>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <div class="course-content border p-3">
+                                <a href="name-content">test</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

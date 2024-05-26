@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string("name");
             $table->text("description");
             $table->string("token");
-            $table->unsignedBigInteger("id_mentor");
+            $table->unsignedBigInteger("id_user");
             $table->timestamps();
-            $table->foreign("id_mentor")->references("id")->on("mentor")->onDelete("cascade");
+            $table->foreign("id_user")->references("id")->on("users")->onDelete("cascade");
         });
     }
 
