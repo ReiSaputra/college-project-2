@@ -52,3 +52,12 @@ p {
     margin-right: 0.5px;
     margin-left: 0.5px;
 }
+
+.textarea-custom {
+    /* background-color: blue; */
+    height: 300px;
+}
+
+.btn-custom {
+    width: 150px;
+}

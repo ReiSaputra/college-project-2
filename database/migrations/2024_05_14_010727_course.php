@@ -16,7 +16,8 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->text("description");
-            $table->string("token");
+            $table->text("course_type");
+            $table->string("token")->unique();
             $table->unsignedBigInteger("id_user");
             $table->timestamps();
             $table->foreign("id_user")->references("id")->on("users")->onDelete("cascade");

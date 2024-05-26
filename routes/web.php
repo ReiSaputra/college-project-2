@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\courseController;
 use App\Http\Controllers\exampleMailController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -54,14 +55,9 @@ Route::get('/participant/{id}/dashboard', function ($id) {
     return view('dashboard.participantDashboard', ['id' => $id]);
 })->name('participant.dashboard')->middleware('auth');
 
-// Route untuk dashboard mentor
-Route::get('/mentor/{id}/course/dashboard', function ($id) {
-    return view('dashboard.mentorDashboard', ['id' => $id]);
-})->name('mentor.dashboard')->middleware('auth');
-
-Route::get("/mentor/{id}/course/create", function () {
-    return view("welcome");
-});
+Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
+Route::get('/mentor/{id}/course/create', [courseController::class, "formCourse"])->name("course.form");
+Route::post('/mentor/{id}/course/create', [courseController::class, "createCourse"])->name("course.controller");
 
 // Mentor
 Route::get("/sign-up/mentor", function () {
