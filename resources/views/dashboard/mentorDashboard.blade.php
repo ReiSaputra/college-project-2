@@ -1,4 +1,4 @@
-    @include("include.landingPage.headLandingPage")
+@include("include.landingPage.headLandingPage")
     <link rel="stylesheet" href="{{ asset("css/dashboardMentor.css") }}">
     <title>Badubii</title>
 </head>
@@ -38,21 +38,23 @@
                     <h6 class="mt-3">Overview</h6>
                     <div class="row border mt-1 box-course overflow-auto">
                         {{-- For Each setiap judul coursenya --}}
+                        @foreach ($data as $dataItem)                  
                         <div class="col-6 mt-2">
                             <div class="course-content border p-3">
-                                <a href="{{ url('/mentor/' . "al" . '/course/name-content') }}">test</a>
+                                <a href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                            </div>
+                        </div>
+                        @endforeach
+                        {{-- <div class="col-6 mt-2">
+                            <div class="course-content border p-3">
+                                <a href="name-content">test</a>
                             </div>
                         </div>
                         <div class="col-6 mt-2">
                             <div class="course-content border p-3">
                                 <a href="name-content">test</a>
                             </div>
-                        </div>
-                        <div class="col-6 mt-2">
-                            <div class="course-content border p-3">
-                                <a href="name-content">test</a>
-                            </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
