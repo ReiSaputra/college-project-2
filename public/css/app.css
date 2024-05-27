@@ -1,3 +1,5 @@
-html {
-    background-color: teal;
-}
+@import url("global.css");
+@import url("login.css");
+@import url("landingPage.css");
+@import url("fallback.css");
+@import url("role.css");

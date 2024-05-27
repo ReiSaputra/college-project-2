@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\courseController;
+use App\Http\Controllers\exampleMailController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landingPage');
+    return view("layouts.landingPage");
 })->name("landing");
 
-<<<<<<< Updated upstream
-=======
 Route::get("role", function () {
     return view("role");
 });
@@ -26,38 +28,45 @@ Route::get("role", function () {
 Route::get("/login", function () {
     return view("login");
 })->name("login");
+// Route::post()
 
-Route::get("/mentor", function () {
-    return view("layouts.mentor");
-})->name("mentor");
+// Student
+Route::get("/sign-up/student", function () {
+    return view("auth.student");
+})->name("student.register");
 
-Route::get("/kelas", function () {
-    return view("layouts.kelasBaru");
-})->name("kelas");
+// Route untuk menangani pendaftaran siswa (POST)
+Route::post('/sign-up/student', [AuthController::class, 'registerStudent'])->name('student.register.post');
 
-Route::get("/kelasSaya", function () {
-    return view("layouts.kelasSaya");
-})->name("kelasSaya");
+// Route untuk menangani pendaftaran mentor (POST)
+Route::post('/sign-up/mentor', [AuthController::class, 'registerMentor'])->name('mentor.register.post');
 
-Route::get("/kelasDemo", function () {
-    return view("layouts.kelasDemo");
-})->name("kelasDemo");
+// Route untuk menangani login (POST)
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
-Route::get("/test-email", [testMailController::class, "sendEmail"]);
+// Mentor
+Route::get("/sign-up/student", function () {
+    return view("auth.mentor");
+})->name("mentor.register");
+
+
+/// Route untuk dashboard participant
+Route::get('/participant/{id}/dashboard', function ($id) {
+    return view('dashboard.participantDashboard', ['id' => $id]);
+})->name('participant.dashboard')->middleware('auth');
+
+Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
+Route::get('/mentor/{id}/course/create', [courseController::class, "formCourse"])->name("course.form");
+Route::post('/mentor/{id}/course/create', [courseController::class, "createCourse"])->name("course.controller");
+
+// Mentor
+Route::get("/sign-up/mentor", function () {
+    return view("auth.mentor");
+})->name("sign-in.mentor");
 
 /**
  * 404
  */
->>>>>>> Stashed changes
 Route::fallback(function () {
     return view("fallback");
 })->name("fallback");
-
-Route::get("/part", function () {
-    return view("participant");
-});
-
-Route::get("/ment", function () {
-    return view("mentor");
-});
-

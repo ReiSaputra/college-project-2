@@ -1,0 +1,403 @@
+@import url("nav.css");
+
+/* 
+    Icon
+*/
+.material-symbols-outlined {
+    height: 32px;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+/* 
+    Landing Page
+*/
+.header h1 {
+    font-size: 2.5rem;
+}
+.header h6 {
+    font-size: 1.1rem;
+}
+.row-header {
+    height: 70vh;
+}
+.px-custom-left {
+    padding-left: 35px;
+}
+.px-custom-right {
+    padding-right: 35px;
+}
+.mx-custom-left {
+    margin-left: 35px;
+}
+.mx-custom-right {
+    margin-right: 35px;
+}
+.img-custom-size {
+    width: 100%;
+}
+.button-solid {
+    background-color: #941bbd;
+}
+.button-outline {
+    border: 1px solid #941bbd;
+}
+.text-red {
+    color: #fe5244;
+}
+.text-brown {
+    color: #a0505a;
+}
+.text-dark-brown {
+    color: #73325a;
+}
+.text-blue {
+    color: #66b0f0;
+}
+.text-purple {
+    color: #941bbd;
+}
+.text-grey {
+    color: #6d6d6d;
+}
+.text-navy {
+    color: #2f2e41;
+}
+.text-grey2 {
+    color: #a9a9a9;
+    transition: 0.15s;
+}
+.text-white {
+    color: white;
+}
+div div p .text-grey2:hover {
+    color: white;
+}
+.solid-purple {
+    background-color: #941bbd;
+}
+.solid-grey {
+    background-color: #6d6d6d;
+}
+.solid-navy {
+    background-color: #2f2e41;
+}
+.remove-default-link {
+    text-decoration: none;
+}
+.highlight-disable {
+    user-select: none;
+}
+header div div img {
+    width: 50%;
+}
+.main {
+    /* background-color: aqua; */
+}
+.footer .row {
+    height: 60vh;
+}
+.row div hr {
+    margin: 0 0 0 auto;
+    width: 50%;
+    border: 1px solid white;
+}
+.row div div .default-m-p {
+    margin: 0 0 8px 0;
+    padding: 0;
+}
+span.custom-w-h {
+    width: 25px;
+    height: 25px;
+}
+.box-get-started {
+    border-radius: 10px;
+    border: 1.5px solid #fe5244;
+    color: #fe5244;
+    transition: 0.2s;
+}
+.box-get-started:hover {
+    border-radius: 10px;
+    border: 1.5px solid #fe5244;
+    background-color: #fe5244;
+    color: white;
+}
+
+.col-custom-left {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #fe5244;
+}
+
+.col-custom-right {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #fe5244;
+}
+
+.card-item {
+    width: 100%;
+    height: 400px;
+}
+
+.drop-bottom {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: #fe5244;
+    color: white;
+}
+
+.card-item-header {
+    width: 60px;
+    height: 60px;
+}
+
+.solid-orange {
+    background-color: #fe5244;
+}
+.solid-yellow {
+    background-color: #ffcf2d;
+}
+.solid-blue {
+    background-color: #66b0f0;
+}
+@import url("nav.css");
+
+/* 
+    Icon
+*/
+.material-symbols-outlined {
+    height: 32px;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+/* 
+    Landing Page
+*/
+.header h1 {
+    font-size: 2.5rem;
+}
+.header h6 {
+    font-size: 1.1rem;
+}
+.row-header {
+    height: 69vh;
+}
+.px-custom-left {
+    padding-left: 35px;
+}
+.px-custom-right {
+    padding-right: 35px;
+}
+.mx-custom-left {
+    margin-left: 35px;
+}
+.mx-custom-right {
+    margin-right: 35px;
+}
+.img-custom-size {
+    width: 100%;
+}
+.button-solid {
+    background-color: #941bbd;
+}
+.button-outline {
+    border: 1px solid #941bbd;
+}
+.text-red {
+    color: #fe5244;
+}
+.text-brown {
+    color: #a0505a;
+}
+.text-dark-brown {
+    color: #73325a;
+}
+.text-blue {
+    color: #66b0f0;
+}
+.text-purple {
+    color: #941bbd;
+}
+.text-grey {
+    color: #6d6d6d;
+}
+.text-navy {
+    color: #2f2e41;
+}
+.text-grey2 {
+    color: #a9a9a9;
+    transition: 0.15s;
+}
+.text-white {
+    color: white;
+}
+div div p .text-grey2:hover {
+    color: white;
+}
+.solid-purple {
+    background-color: #941bbd;
+}
+.solid-grey {
+    background-color: #6d6d6d;
+}
+.solid-navy {
+    background-color: #2f2e41;
+}
+.remove-default-link {
+    text-decoration: none;
+}
+.highlight-disable {
+    user-select: none;
+}
+header div div img {
+    width: 50%;
+}
+.main {
+    /* background-color: aqua; */
+}
+.footer .row {
+    height: 60vh;
+}
+.row div hr {
+    margin: 0 0 0 auto;
+    width: 50%;
+    border: 1px solid white;
+}
+.row div div .default-m-p {
+    margin: 0 0 8px 0;
+    padding: 0;
+}
+span.custom-w-h {
+    width: 25px;
+    height: 25px;
+}
+.box-get-started {
+    border-radius: 10px;
+    border: 1.5px solid #fe5244;
+    color: #fe5244;
+    transition: 0.2s;
+}
+.box-get-started:hover {
+    border-radius: 10px;
+    border: 1.5px solid #fe5244;
+    background-color: #fe5244;
+    color: white;
+}
+
+.col-custom-left {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #fe5244;
+}
+
+.col-custom-right {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #fe5244;
+}
+
+.card-item {
+    width: 380px;
+    height: 400px;
+}
+
+.drop-bottom {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: #fe5244;
+    color: white;
+}
+
+.card-item-header {
+    width: 60px;
+    height: 60px;
+}
+
+.solid-orange {
+    background-color: #fe5244;
+}
+.solid-yellow {
+    background-color: #ffcf2d;
+}
+.solid-blue {
+    background-color: #66b0f0;
+}
+
+.school-code-row {
+    height: 200px;
+}
+
+.arrow {
+    width: 15%;
+}
+
+.arrow-2 {
+    top: -60px;
+    left: 280px;
+}
+
+.arrow-3 {
+    top:-60px;
+    right: 280px;
+    transform: rotate(180deg);
+}
+
+.school-code-form .email .label-box {
+    /* background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+/* .school-code-form email label {
+    background-color: #941bbd;
+} */
+
+/* .school-code-section input {
+    background-color: #66b0f0;
+    border: 1px solid black;
+} */
+
+.school-code-section input:focus {
+    outline: 0;
+    /* border: 0px; */
+}
+
+.school-code-form {
+    /* border: 1px solid black; */
+    width: 35%;
+}
+
+.school-code-form input {
+    width: 100%;
+}
+
+.label-box {
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 1.5px solid #fe5244;
+}
+
+.email {
+    width: 100%;
+    border: 1.5px solid #fe5244;
+}
+
+.school-code-form input {
+    padding: 0 10px;
+    border: 0px;
+}
+
+.school-code-form button {
+    width: 100%;
+    border: 0px;
+    background-color: #fe5244;
+    transition: 0.3s;
+}
+
+.school-code-form button:hover {
+    width: 100%;
+    border: 0px;
+    background-color: #ce3a2d;
+}

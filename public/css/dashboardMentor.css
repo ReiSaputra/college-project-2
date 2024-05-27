@@ -1,0 +1,63 @@
+.dashboard {
+    /* background-color: antiquewhite; */
+    height: 100vh;
+}
+
+.profile .profile-pic {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.profile h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.profile p {
+    font-size: 0.9rem;
+}
+
+.tab {
+    width: 100%;
+}
+
+.logo {
+    height: 49px;
+    /* border: 1px solid black; */
+}
+
+.create-course {
+    height: 70px;
+    text-decoration: none;
+}
+
+.custom-i {
+    width: 30px;
+    height: 30px;
+}
+
+.course-content {
+    height: 175px;
+}
+
+.course-content a {
+    text-decoration: none;
+}
+
+.box-course {
+    height: 300px;
+    margin-right: 0.5px;
+    margin-left: 0.5px;
+}
+
+.textarea-custom {
+    /* background-color: blue; */
+    height: 300px;
+}
+
+.btn-custom {
+    width: 150px;
+}
