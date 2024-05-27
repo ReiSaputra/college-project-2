@@ -83,7 +83,7 @@ class AuthController extends Controller
             $user = Auth::user();
 
             if ($user->role === 'Mentor') {
-                return redirect()->route('mentor.dashboard', ['id' => $user->id]);
+                return redirect()->route('course.view', ['id' => $user->id]);
             } elseif ($user->role === 'Student') {
                 return redirect()->route('participant.dashboard', ['id' => $user->id]);
             } else {
