@@ -47,10 +47,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
 
 // Route untuk dashboard participant
-Route::get('/participant/{id}/dashboard', function ($id) {
-    return view('dashboard.participantDashboard', ['id' => $id]);
-})->name('participant.dashboard')->middleware('auth');
-
+Route::get('/participant/{id}/course/dashboard', [participantController::class, "index"])->name("participant.dashboard");
 Route::get("/participant/{id}/course/join", [participantController::class, "view"])->name("course.view");
 
 Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
