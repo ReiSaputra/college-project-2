@@ -16,18 +16,19 @@ class AuthController extends Controller
     public function registerStudent(Request $request)
     {
         $validator = FacadesValidator::make($request->all(),[
-            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|in:1,2',
+            'role' => 'required|string',
         ]);
+
+        // @dd($validator);
 
         if ($validator->fails()){
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $user = participant::create([
-            'name' => $request->name,
+        $user = User::create([
+
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
@@ -43,7 +44,7 @@ class AuthController extends Controller
             // 'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|string|in:Administrator,Student,Mentor',
+            'role' => 'required|string|in:Administrator,Participant,Mentor',
         ]);
 
         if ($validator->fails()) {
@@ -53,7 +54,7 @@ class AuthController extends Controller
         User::create([
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'id_status' => $request->role,
+            'role' => $request->role,
         ]);
 
         return redirect()->route('login')->with('success', 'Mentor registered successfully');
@@ -84,7 +85,7 @@ class AuthController extends Controller
 
             if ($user->role === 'Mentor') {
                 return redirect()->route('course.view', ['id' => $user->id]);
-            } elseif ($user->role === 'Student') {
+            } elseif ($user->role === 'Participant') {
                 return redirect()->route('participant.dashboard', ['id' => $user->id]);
             } else {
                 // Default redirect if role is unknown
