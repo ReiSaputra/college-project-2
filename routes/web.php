@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\courseController;
+use App\Http\Controllers\participantController;
 use App\Http\Controllers\exampleMailController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -49,6 +50,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/participant/{id}/dashboard', function ($id) {
     return view('dashboard.participantDashboard', ['id' => $id]);
 })->name('participant.dashboard')->middleware('auth');
+
+Route::get("/participant/{id}/course/join", [participantController::class, "view"])->name("course.view");
 
 Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
 Route::get('/mentor/{id}/course/create', [courseController::class, "formCourse"])->name("course.form");
