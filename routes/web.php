@@ -50,7 +50,7 @@ Route::get("/sign-up/student", function () {
 })->name("mentor.register");
 
 
-/// Route untuk dashboard participant
+// Route untuk dashboard participant
 Route::get('/participant/{id}/dashboard', function ($id) {
     return view('dashboard.participantDashboard', ['id' => $id]);
 })->name('participant.dashboard')->middleware('auth');
