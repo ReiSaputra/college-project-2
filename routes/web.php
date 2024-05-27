@@ -44,11 +44,6 @@ Route::post('/sign-up/mentor', [AuthController::class, 'registerMentor'])->name(
 // Route untuk menangani login (POST)
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
-// Mentor
-Route::get("/sign-up/student", function () {
-    return view("auth.mentor");
-})->name("mentor.register");
-
 
 // Route untuk dashboard participant
 Route::get('/participant/{id}/dashboard', function ($id) {
