@@ -24,13 +24,18 @@ class courseController extends Controller
             "data" => $courses
         ]);
     }
-    public function formCourse()
+    public function formCourse($id)
     {
-        return view("createCourse");
+        return view(
+            "createCourse",
+            [
+                "id" => $id
+            ]
+        );
     }
     public function createCourse(Request $request, $id)
     {
-        $validate = FacadesValidator::make($request->all(),[
+        $validate = FacadesValidator::make($request->all(), [
             'name' => 'required|string|max:255',
             'description' => 'string',
             'type' => 'required|string',

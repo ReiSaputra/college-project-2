@@ -6,18 +6,7 @@
     <div class="dashboard">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2 border menu px-4 py-4">
-                    <div class="logo d-flex align-items-center">
-                        <img class="border" src="{{ asset("assets/badubii-red.png") }}" alt="logo" width="110">
-                    </div>
-                    <a class="create-course mt-3 border d-flex p-2 justify-content-evenly align-items-center" href="{{ url('/mentor/' . $id . '/course/create') }}">
-                        <i class="fa-solid fa-plus"></i>
-                        <h6>Buat<br/>Kursus</h6>
-                    </a>
-                    <div class="feature-link border mt-3">
-                        <a href="dashboard">Dasboard</a>
-                    </div>
-                </div>
+                @include("include.dashboard.mentor")
                 <div class="col-10 border dashboard px-5 py-4">
                     <div class="tab">
                         <div class="profile-box d-flex justify-content-end">
