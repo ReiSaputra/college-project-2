@@ -1,4 +1,4 @@
-    @include("include.landingPage.headLandingPage")
+@include("include.landingPage.headLandingPage")
     <link rel="stylesheet" href="{{ asset("css/dashboardMentor.css") }}">
     <title>Badubii</title>
 </head>
@@ -6,18 +6,7 @@
     <div class="dashboard">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2 border menu px-4 py-4">
-                    <div class="logo d-flex align-items-center">
-                        <img class="border" src="{{ asset("assets/badubii-red.png") }}" alt="logo" width="110">
-                    </div>
-                    <a class="create-course mt-3 border d-flex p-2 justify-content-evenly align-items-center" href="{{ url('/participant/' . $id . '/course/join') }}">
-                        <i class="fa-solid fa-plus"></i>
-                        <h6>Ikuti<br/>Kursus</h6>
-                    </a>
-                    <div class="feature-link border mt-3">
-                        <a href="dashboard">Dasboard</a>
-                    </div>
-                </div>
+                @include("include.dashboard.participant")
                 <div class="col-10 border dashboard px-5 py-4">
                     <div class="tab">
                         <div class="profile-box d-flex justify-content-end">
@@ -33,25 +22,13 @@
                     </div>
                     <div class="form-box mt-3">
                         <h6 class="py-3">Ikuti Kursus</h6>
-                        <form action="{{ route("course.controller", ['id' => Auth::user()->id]) }}" class="" method="POST">
+                        <form action="{{ route("join.course", ['id' => Auth::user()->id]) }}" class="" method="POST">
+                            @csrf
                             <div class="row">
-                                @csrf
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input name="name" type="text" class="form-control" id="floatingCourseName" placeholder="Nama Kursus" required>
-                                        <label for="floatingCourseName">Nama Kursus</label>
-                                    </div>
-                                </div>
-                                <div class="col-6 mt-3">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingCourseToken" placeholder="Token">
+                                        <input name="token" type="text" class="form-control" id="floatingCourseName" placeholder="Token" required>
                                         <label for="floatingCourseToken">Token</label>
-                                    </div>
-                                </div>
-                                <div class="col-6 mt-3">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingCourseMentor" placeholder="Token">
-                                        <label for="floatingCourseMentor">Mentor</label>
                                     </div>
                                 </div>
                                 <div class="col-3">

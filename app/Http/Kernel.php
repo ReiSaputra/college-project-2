@@ -70,7 +70,7 @@ class Kernel extends HttpKernel
 
     protected $routeMiddleware = [
         'role' => \App\Http\Middleware\RoleMiddleware::class,
-        'check.ownership' => \app\Http\Middleware\CheckParticipantOwnership::class,
+        'check.ownership' => \App\Http\Middleware\CheckParticipantOwnership::class,
     ];
     
 }

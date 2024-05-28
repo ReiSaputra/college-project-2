@@ -20,7 +20,7 @@ class CheckParticipantOwnership
         $participantId = $request->route('id');
 
         if ($user-> id != $participantId) {
-            return redirect('/unautorized');
+            return redirect('');
         }
 
         return $next($request);

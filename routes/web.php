@@ -44,20 +44,20 @@ Route::post('/sign-up/mentor', [AuthController::class, 'registerMentor'])->name(
 
 // Route untuk menangani login (POST)
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::post("/logout", [AuthController::class, 'logout'])->name('logout.post');
 
+// Route untuk logout
 
 // Route untuk dashboard participant
-Route::get('/participant/{id}/course/dashboard', [participantController::class, "index"])->name("participant.dashboard");
-Route::get("/participant/{id}/course/join", [participantController::class, "view"])->name("course.view")->middleware('auth.user');
+Route::group(['middleware' => ['auth', 'check.ownership']], function () {
+    Route::get('/participant/{id}/course/dashboard', [participantController::class, "index"])->name("participant.dashboard");
+    Route::get("/participant/{id}/course/join", [participantController::class, "view"])->name("course.view");
+    Route::post("/participant/{id}/course/join", [participantController::class, "joinCourse"])->name("join.course");
+});
 
-Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view")->middleware('auth.user');
+Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
 Route::get('/mentor/{id}/course/create', [courseController::class, "formCourse"])->name("course.form");
 Route::post('/mentor/{id}/course/create', [courseController::class, "createCourse"])->name("course.controller");
-
-//
-route::group(['middleware' => ['auth', 'check.ownership']], function() ){
-    route::get('//participant/{id}/course/dashboard', [])
-}
 
 // Mentor
 Route::get("/sign-up/mentor", function () {

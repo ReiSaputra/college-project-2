@@ -14,10 +14,11 @@ return new class extends Migration
         //
         Schema::create("mentor_enroll_list", function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("id_mentor");
+            $table->unsignedBigInteger("id_user");
             $table->unsignedBigInteger("id_course");
-            $table->foreign("id_mentor")->references("id")->on("mentor")->onDelete("cascade");
+            $table->foreign("id_user")->references("id")->on("users")->onDelete("cascade");
             $table->foreign("id_course")->references("id")->on("course")->onDelete("cascade");
+            $table->timestamps();
         });
     }
 
