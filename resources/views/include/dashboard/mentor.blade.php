@@ -2,11 +2,11 @@
     <div class="logo d-flex align-items-center">
         <img class="border" src="{{ asset("assets/badubii-red.png") }}" alt="logo" width="110">
     </div>
-    <a class="create-course mt-3 border d-flex p-2 justify-content-evenly align-items-center" href="{{ url('/mentor/' . $id . '/course/create') }}">
-        <i class="fa-solid fa-plus"></i>
-        <h6>Buat<br/>Kursus</h6>
+    <a class="create-course mt-3 border d-flex p-2 justify-content-evenly align-items-center text-white bg-solid-orange" href="{{ url('/mentor/' . $id . '/course/create') }}">
+        <i class="fa-solid fa-plus d-flex justify-content-center align-items-center custom-i border"></i>
+        <h6 class="">Buat<br/>Kursus</h6>
     </a>
     <div class="feature-link border mt-3">
-        <a href="dashboard">Dasboard</a>
+        <a class="text-decoration-none text-orange" href="dashboard">Dasboard</a>
     </div>
 </div>
