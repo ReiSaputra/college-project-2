@@ -20,8 +20,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="title-dashboard p-4 mt-3 bg-solid-blue-light position-relative d-flex overflow-hidden justify-content-between align-items-center">
-                        <div class="title-text-group text-blue">
+                    <div class="title-dashboard p-4 mt-3 bg-solid-orange-light position-relative d-flex overflow-hidden justify-content-between align-items-center">
+                        <div class="title-text-group text-orange">
                             <h2 class="poppins-semibold">Halo, {{ Auth::user()->name }}#{{ Auth::user()->id }}!</h2>
                             <h6 class="poppins-light">Siap untuk mengajar hari ini?</h6>
                         </div>
@@ -39,6 +39,11 @@
                             </div>
                             @elseif ($dataItem->course_type == "Bahasa Inggris")
                             <div class="course-content p-3 bg-solid-yellow">
+                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                                <p class="text-white">{{ $dataItem->course_type }}</p>
+                            </div>
+                            @elseif ($dataItem->course_type == "Sains")
+                            <div class="course-content p-3 bg-solid-green">
                                 <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
                                 <p class="text-white">{{ $dataItem->course_type }}</p>
                             </div>

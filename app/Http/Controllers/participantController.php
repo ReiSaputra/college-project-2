@@ -20,7 +20,7 @@ class participantController extends Controller
         return view("dashboard.participantDashboard", [
             "id" => $id,
             "name" => $username,
-            "courses" => $courses
+            "data" => $courses
         ]);
     }
     public function view($id)
@@ -34,6 +34,7 @@ class participantController extends Controller
         $token = $request->only("token");
 
         $course = DB::table("course")->where("token", $token)->first();
+
         if ($course) {
             // Cek jika Pengguna telah mempunyai kursus yang sama
             $hasCourse = DB::table("mentor_enroll_list")->where("id_user", $id)->where("id_course", $course->id)->first();
@@ -49,7 +50,8 @@ class participantController extends Controller
                     "id" => $id
                 ]);
             }
-
+        } else {
+            return redirect()->back()->withErrors($course)->withInput();
         }
     }
 

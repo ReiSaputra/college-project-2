@@ -22,7 +22,8 @@
                     </div>
                     <div class="form-box mt-3">
                         <h6 class="py-3">Ikuti Kursus</h6>
-                        <form action="{{ route("join.course", ['id' => Auth::user()->id]) }}" class="" method="POST">
+                        <p>Setiap kursus mempunyai <span class="poppins-semibold">Token</span> untuk dapat bergabung dengan kursus yang anda tujui. Minta kepada Mentor anda untuk dapat mengaksesnya.</p>
+                        <form action="{{ route("join.course", ['id' => Auth::user()->id]) }}" class="mt-3" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-12">

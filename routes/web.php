@@ -58,6 +58,10 @@ Route::group(['middleware' => ['auth', 'check.ownership']], function () {
 Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
 Route::get('/mentor/{id}/course/create', [courseController::class, "formCourse"])->name("course.form");
 Route::post('/mentor/{id}/course/create', [courseController::class, "createCourse"])->name("course.controller");
+Route::get("/mentor/{id}/course/{courseTitle}", function () {
+    return view("courseContent");
+});
+
 
 // Mentor
 Route::get("/sign-up/mentor", function () {
