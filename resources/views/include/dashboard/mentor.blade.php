@@ -9,4 +9,10 @@
     <div class="feature-link border mt-3">
         <a class="text-decoration-none text-orange" href="dashboard">Dasboard</a>
     </div>
+    <div class="logout">
+        <form action="{{ route("logout.post") }}" method="post">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
+    </div>
 </div>
