@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckParticipantOwnership
+class CheckMentor
 {
     /**
      * Handle an incoming request.
@@ -17,13 +17,12 @@ class CheckParticipantOwnership
     public function handle(Request $request, Closure $next): Response
     {
         $user = Auth::user();
-        $participantId = $request->route('id');
+        $mentorId = $request->route('id');
 
-        if ($user-> id != $participantId) {
+        if ($user-> id != $mentorId) {
             return redirect('/');
         }
 
         return $next($request);
     }
-    
 }
