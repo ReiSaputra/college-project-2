@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\contentController;
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\participantController;
 use App\Http\Controllers\exampleMailController;
@@ -58,7 +59,10 @@ Route::group(['middleware' => ['auth','check.mentor']], function(){
     Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
     Route::get('/mentor/{id}/course/create', [courseController::class, "formCourse"])->name("course.form");
     Route::post('/mentor/{id}/course/create', [courseController::class, "createCourse"])->name("course.controller");
+    Route::get("/mentor/{id}/course/{courseTitle}", [contentController::class, "view"])->name("content.view");
 });
+
+Route::get("/mentor/{id}/course/{courseTitle}", [contentController::class, "view"])->name("content.view");
 
 
 // Mentor

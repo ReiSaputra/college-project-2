@@ -20,30 +20,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="title-dashboard border rounded p-4 mt-3">
-                        <h2 class="poppins-semibold">Halo, {{ Auth::user()->name }}#{{ Auth::user()->id }}!</h2>
-                        <h6 class="poppins-light">Siap untuk mengajar hari ini?</h6>
+                    <div class="title-dashboard p-4 mt-3 bg-solid-orange-light position-relative d-flex overflow-hidden justify-content-between align-items-center">
+                        <div class="title-text-group text-orange">
+                            <h2 class="poppins-semibold">Halo, {{ Auth::user()->name }}#{{ Auth::user()->id }}!</h2>
+                            <h6 class="poppins-light">Siap untuk mengajar hari ini?</h6>
+                        </div>
+                        <img class="img-fluid-custom position-absolute" src="{{ asset("assets/DrawKit - Education Illustration Pack/SVG/5 SCENE.svg") }}" alt="">
                     </div>
                     <h6 class="mt-3">Overview</h6>
-                    <div class="row border mt-1 box-course overflow-auto">
+                    <div class="row mt-1 p-2 box-course overflow-auto">
                         {{-- For Each setiap judul coursenya --}}
                         @foreach ($data as $dataItem)                  
-                        <div class="col-6 mt-2">
-                            <div class="course-content border p-3">
-                                <a href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                        <div class="col-6 mt-2 mb-2">
+                            @if ($dataItem->course_type == "Matematika")                        
+                            <div class="course-content p-3 bg-solid-blue">
+                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                                <p class="text-white">{{ $dataItem->course_type }}</p>
                             </div>
+                            @elseif ($dataItem->course_type == "Bahasa Inggris")
+                            <div class="course-content p-3 bg-solid-yellow">
+                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                                <p class="text-white">{{ $dataItem->course_type }}</p>
+                            </div>
+                            @elseif ($dataItem->course_type == "Sains")
+                            <div class="course-content p-3 bg-solid-green">
+                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                                <p class="text-white">{{ $dataItem->course_type }}</p>
+                            </div>
+                            @else
+                            <div class="course-content p-3 bg-solid-orange">
+                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                                <p class="text-white">{{ $dataItem->course_type }}</p>
+                            </div>
+                            @endif
                         </div>
                         @endforeach
-                        {{-- <div class="col-6 mt-2">
-                            <div class="course-content border p-3">
-                                <a href="name-content">test</a>
-                            </div>
-                        </div>
-                        <div class="col-6 mt-2">
-                            <div class="course-content border p-3">
-                                <a href="name-content">test</a>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>

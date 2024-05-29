@@ -1,3 +1,7 @@
+/* body {
+    background-color: #fffbfa;
+} */
+
 .dashboard {
     /* background-color: antiquewhite; */
     height: 100vh;
@@ -51,6 +55,7 @@ p {
     height: 300px;
     margin-right: 0.5px;
     margin-left: 0.5px;
+    border: 1.5px solid #ffd7b5;
 }
 
 .textarea-custom {
@@ -60,4 +65,55 @@ p {
 
 .btn-custom {
     width: 150px;
+}
+
+.bg-solid-blue {
+    background-color: #4485be;
+}
+
+.bg-solid-blue-light {
+    background-color: #accfee;
+}
+
+.bg-solid-orange {
+    background-color: #fe5244;
+}
+
+.bg-solid-orange-light {
+    background-color: #ffd7b5;
+}
+
+.bg-solid-white {
+    background-color: white;
+}
+
+.bg-solid-green {
+    background-color: #0096a0;
+}
+
+.bg-solid-yellow {
+    background-color: #ffcf2d;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-orange {
+    color: #fe5244;
+}
+
+.text-blue {
+    color: #176ebb;
+}
+
+.title-dashboard {
+    width: 100%;
+    height: 130px;
+}
+
+.img-fluid-custom {
+    width: 500px;
+    right: -85px;
+    top: -25px;
 }

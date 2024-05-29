@@ -6,7 +6,7 @@
     <div class="dashboard">
         <div class="container-fluid">
             <div class="row">
-                @include("include.dashboard.participant")
+                @include("include.dashboard.mentor")
                 <div class="col-10 border dashboard px-5 py-4">
                     <div class="tab">
                         <div class="profile-box d-flex justify-content-end">
@@ -20,23 +20,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-box mt-3">
-                        <h6 class="py-3">Ikuti Kursus</h6>
-                        <p>Setiap kursus mempunyai <span class="poppins-semibold">Token</span> untuk dapat bergabung dengan kursus yang anda tujui. Minta kepada Mentor anda untuk dapat mengaksesnya.</p>
-                        <form action="{{ route("join.course", ['id' => Auth::user()->id]) }}" class="mt-3" method="POST">
-                            @csrf
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input name="token" type="text" class="form-control" id="floatingCourseName" placeholder="Token" required>
-                                        <label for="floatingCourseToken">Token</label>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <button type="submit" class="btn btn-primary btn-sm btn-custom py-3 mt-3">Buat</button>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="title-dashboard p-4 mt-3 bg-solid-orange-light position-relative d-flex overflow-hidden justify-content-between align-items-center">
+                        <div class="title-text-group text-orange">
+                            <h2 class="poppins-semibold">{{ $courseTitle }}</h2>
+                            <h6 class="poppins-light"></h6>
+                        </div>
+                        <img class="img-fluid-custom position-absolute" src="{{ asset("assets/DrawKit - Education Illustration Pack/SVG/5 SCENE.svg") }}" alt="">
+                    </div>
+                    <h6 class="mt-3">Overview</h6>
+                    <div class="row mt-1 p-2 box-course overflow-auto">
+
                     </div>
                 </div>
             </div>
