@@ -55,15 +55,14 @@ Route::group(['middleware' => ['auth', 'check.participant']], function () {
     Route::post("/participant/{id}/course/join", [participantController::class, "joinCourse"])->name("join.course");
 });
 
-Route::group(['middleware' => ['auth','check.mentor']], function(){
+Route::group(['middleware' => ['auth', 'check.mentor']], function () {
     Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
     Route::get('/mentor/{id}/course/create', [courseController::class, "formCourse"])->name("course.form");
     Route::post('/mentor/{id}/course/create', [courseController::class, "createCourse"])->name("course.controller");
     Route::get("/mentor/{id}/course/{courseTitle}", [contentController::class, "view"])->name("content.view");
+    Route::get("/mentor/{id}/course/{courseTitle}/add", [contentController::class, "viewContentForm"])->name("content.add.form");
+    Route::post("/mentor/{id}/course/{courseTitle}/add", [contentController::class, "addContent"])->name("content.add");
 });
-
-Route::get("/mentor/{id}/course/{courseTitle}", [contentController::class, "view"])->name("content.view");
-
 
 // Mentor
 Route::get("/sign-up/mentor", function () {

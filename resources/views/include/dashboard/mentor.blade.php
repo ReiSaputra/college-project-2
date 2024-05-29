@@ -7,7 +7,7 @@
         <h6 class="">Buat<br/>Kursus</h6>
     </a>
     <div class="feature-link mt-3">
-        <a class="text-decoration-none text-orange d-flex py-3 justify-content-evenly align-items-center" href="dashboard">
+        <a class="text-decoration-none text-orange d-flex py-3 justify-content-evenly align-items-center" href="/mentor/{{ $id }}/course/dashboard">
             <i class="fa-solid fa-house custom-i d-flex justify-content-center align-items-center"></i>Dasboard</a>
     </div>
     <div class="logout">

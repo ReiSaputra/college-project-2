@@ -17,4 +17,15 @@ class contentController extends Controller
             "courseTitle" => $courseTitle
         ]);
     }
+    public function viewContentForm($id, $courseTitle)
+    {
+        return view("courseContentForm", [
+            "id" => $id,
+            "courseTitle" => $courseTitle
+        ]);
+    }
+    public function addContent(Request $request)
+    {
+
+    }
 }

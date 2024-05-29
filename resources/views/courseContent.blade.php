@@ -27,7 +27,10 @@
                         </div>
                         <img class="img-fluid-custom position-absolute" src="{{ asset("assets/DrawKit - Education Illustration Pack/SVG/5 SCENE.svg") }}" alt="">
                     </div>
-                    <h6 class="mt-3">Overview</h6>
+                    <div class="d-flex mt-3 border justify-content-between align-items-center">
+                        <h6 class="">Overview</h6>
+                        <a class="text-decoration-none" href="{{ $courseTitle }}/add">Add Content</a>
+                    </div>
                     <div class="row mt-1 p-2 box-course overflow-auto">
 
                     </div>
