@@ -19,7 +19,7 @@ class contentController extends Controller
         ->join('course', 'content.id_course', '=', 'course.id')
         ->join('file_upload', 'content.id', '=', 'file_upload.id_content')
         ->select('content.*', 'course.name as course_name', 'file_upload.filename', 'file_upload.filepath', 'file_upload.filetype')
-        ->where('course.user_id', "=", Auth::id())
+        ->where('course.id_user', "=", Auth::id())
         ->get();
 
         return view("courseContent", [

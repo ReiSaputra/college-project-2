@@ -35,7 +35,9 @@
                     </div>
                     <div class="row mt-1 p-2 box-course overflow-auto">
                         @foreach($contents as $content)
-                        <a href="">{{ $content->name }}</a>
+                        <div class="content-list border">
+                            <a style="background-color:bisque;" href="{{ $content->filepath }}" download>{{ $content->name }}</a>
+                        </div>
                         @endforeach
                     </div>
                 </div>
