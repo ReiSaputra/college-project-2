@@ -22,7 +22,16 @@
                     </div>
                     <div class="form-box mt-3">
                         <h6 class="py-3">Tambah Konten</h6>
-                        <form action="{{ route("content.add", ['id' => Auth::user()->id, 'courseId' => $courseId]) }}" class="" method="POST">
+                        @if ($errors->any())
+                        <div>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li> {{ $error}} </li>    
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                        <form enctype="multipart/form-data" action="{{ route("content.add", ['id' => Auth::user()->id, 'courseId' => $courseId]) }}" class="" method="POST">
                             <div class="row">
                                 @csrf
                                 <div class="col-12">
@@ -31,6 +40,8 @@
                                         <label for="floatingCourseContent">Nama Konten</label>
                                     </div>
                                 </div>
+                                {{-- Hidden --}}
+                                <input hidden name="courseId" type="text" id="floatingCourseId" placeholder="Nama Course" value="{{ $courseId }}">
                                 <div class="col-6 mt-3">
                                     <div class="form-floating">
                                         <input disabled type="text" class="form-control" id="floatingCourseName" placeholder="Nama Kursus" value="{{$courseTitle }}">
