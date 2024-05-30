@@ -22,8 +22,9 @@
                     </div>
                     <div class="title-dashboard p-4 mt-3 bg-solid-orange-light position-relative d-flex overflow-hidden justify-content-between align-items-center">
                         <div class="title-text-group text-orange">
-                            <h2 class="poppins-semibold">{{ $courseTitle }}</h2>
-                            <h6 class="poppins-light"></h6>
+                            @foreach ($course as $courseName)
+                            <h2 class="poppins-semibold">{{ $courseName->name }}</h2>
+                            @endforeach
                         </div>
                         <img class="img-fluid-custom position-absolute" src="{{ asset("assets/DrawKit - Education Illustration Pack/SVG/5 SCENE.svg") }}" alt="">
                     </div>

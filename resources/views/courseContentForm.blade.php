@@ -21,37 +21,36 @@
                         </div>
                     </div>
                     <div class="form-box mt-3">
-                        <h6 class="py-3">Tambah Content</h6>
-                        <form action="{{ route("content.add.form", ['id' => Auth::user()->id, 'courseTitle' => $courseTitle]) }}" class="" method="POST">
+                        <h6 class="py-3">Tambah Konten</h6>
+                        <form action="{{ route("content.add", ['id' => Auth::user()->id, 'courseId' => $courseId]) }}" class="" method="POST">
                             <div class="row">
                                 @csrf
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input name="name" type="text" class="form-control" id="floatingCourseName" placeholder="Nama Kursus" required>
-                                        <label for="floatingCourseName">Nama Kursus</label>
+                                        <input name="name" type="text" class="form-control" id="floatingCourseContent" placeholder="Nama Konten" required>
+                                        <label for="floatingCourseContent">Nama Konten</label>
                                     </div>
                                 </div>
                                 <div class="col-6 mt-3">
                                     <div class="form-floating">
-                                        <select name="type" class="form-select" id="floatingCourseType" aria-label="Floating label select example" required>
-                                            <option selected disabled>Pilih Jenis Kursus</option>
-                                            <option value="Matematika">Matematika</option>
-                                            <option value="Bahasa Indonesia">Bahasa Indonesia</option>
-                                            <option value="Bahasa Inggris">Bahasa Inggris</option>
-                                            <option value="Sains">Sains</option>
-                                            <option value="Sejarah">Sejarah</option>
-                                        </select>
-                                        <label for="floatingCourseType">Jenis Kursus</label>
+                                        <input disabled type="text" class="form-control" id="floatingCourseName" placeholder="Nama Kursus" value="{{$courseTitle }}">
+                                        <label for="floatingCourseName">Nama Kursus</label>
                                     </div>
                                 </div>
+                                {{-- Hidden --}}
+                                <input hidden name="mentorName" type="text" id="floatingCourseMentor" placeholder="Nama Course" value="{{ Auth::user()->name }}#{{ Auth::user()->id }}">
                                 <div class="col-6 mt-3">
                                     <div class="form-floating">
                                         <input disabled type="text" class="form-control" id="floatingCourseMentor" placeholder="Nama Course" value="{{ Auth::user()->name }}#{{ Auth::user()->id }}">
                                         <label for="floatingCourseMentor">Mentor</label>
                                     </div>
                                 </div>
-                                {{-- Hidden --}}
-                                <input hidden name="mentorName" type="text" id="floatingCourseMentor" placeholder="Nama Course" value="{{ Auth::user()->name }}#{{ Auth::user()->id }}">
+                                <div class="col-12 mt-3">
+                                    <div class="form-floating">
+                                        <input type="file" name="file" class="form-control" placeholder="Tambah File" id="floatingFile"></input>
+                                        <label for="floatingFile">Tambah File</label>
+                                    </div>
+                                </div>
                                 <div class="col-12 mt-3">
                                     <div class="form-floating">
                                         <textarea name="description" class="form-control" placeholder="Deskripsi" id="floatingTextarea" style="height: 100px"></textarea>
