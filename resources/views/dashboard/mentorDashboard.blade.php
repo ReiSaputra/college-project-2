@@ -36,21 +36,25 @@
                             <div class="course-content p-3 bg-solid-blue">
                                 <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->id) }}">{{ $dataItem->name }}</a>
                                 <p class="text-white">{{ $dataItem->course_type }}</p>
+                                <p class="text-white">{{ $dataItem->token }}</p>
                             </div>
                             @elseif ($dataItem->course_type == "Bahasa Inggris")
                             <div class="course-content p-3 bg-solid-yellow">
                                 <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->id) }}">{{ $dataItem->name }}</a>
                                 <p class="text-white">{{ $dataItem->course_type }}</p>
+                                <p class="text-white">{{ $dataItem->token }}</p>
                             </div>
                             @elseif ($dataItem->course_type == "Sains")
                             <div class="course-content p-3 bg-solid-green">
                                 <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->id) }}">{{ $dataItem->name }}</a>
                                 <p class="text-white">{{ $dataItem->course_type }}</p>
+                                <p class="text-white">{{ $dataItem->token }}</p>
                             </div>
                             @else
                             <div class="course-content p-3 bg-solid-orange">
                                 <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->id) }}">{{ $dataItem->name }}</a>
                                 <p class="text-white">{{ $dataItem->course_type }}</p>
+                                <p class="text-white">{{ $dataItem->token }}</p>
                             </div>
                             @endif
                         </div>
