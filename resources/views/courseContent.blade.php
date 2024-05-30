@@ -1,3 +1,4 @@
+{{-- @dd($contents) --}}
 @include("include.landingPage.headLandingPage")
     <link rel="stylesheet" href="{{ asset("css/dashboardMentor.css") }}">
     <title>Badubii</title>
@@ -33,7 +34,9 @@
                         <a class="text-decoration-none" href="{{ $courseTitle }}/add">Add Content</a>
                     </div>
                     <div class="row mt-1 p-2 box-course overflow-auto">
-
+                        @foreach($contents as $content)
+                        <a href="">{{ $content->name }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>
