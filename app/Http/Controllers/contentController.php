@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Builders\ContentBuilder;
+use App\Builders\FileUploadBuilder;
 use App\Models\Content;
 use App\Models\FileUpload;
 use Illuminate\Http\Request;
@@ -60,27 +62,52 @@ class contentController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
         
-        $content = new Content();
-        $content->name = $request->input('name');
-        $content->id_course = $request->input('courseId');
-        $content->save();
+        // $content = new Content();
+        // $content->name = $request->input('name');
+        // $content->id_course = $request->input('courseId');
+        // $content->save();
+
+        // $lastInsertedId = $content->id;
+
+        // if ($request->hasFile('file')) {
+
+
+        //     $file = $request->file('file');
+        //     $filename = time() . '_' . $file->getClientOriginalName();
+        //     $filepath = $file->storeAs('uploads', $filename, 'public');
+
+        //     $fileUpload = new FileUpload();
+        //     $fileUpload->filename = $filename;
+        //     $fileUpload->filepath = '/storage/' . $filepath;
+        //     $fileUpload->filetype = $file->getClientMimeType();
+        //     $fileUpload->filesize = $file->getSize();
+        //     $fileUpload->id_content = $lastInsertedId;
+        //     $fileUpload->save();
+        // }
+
+        // Using ContentBuilder
+        $contentBuilder = new ContentBuilder();
+        $content = $contentBuilder
+            ->setName($request->input('name'))
+            ->setCourseId($request->input('courseId'))
+            ->save();
 
         $lastInsertedId = $content->id;
 
         if ($request->hasFile('file')) {
-
-
             $file = $request->file('file');
             $filename = time() . '_' . $file->getClientOriginalName();
             $filepath = $file->storeAs('uploads', $filename, 'public');
 
-            $fileUpload = new FileUpload();
-            $fileUpload->filename = $filename;
-            $fileUpload->filepath = '/storage/' . $filepath;
-            $fileUpload->filetype = $file->getClientMimeType();
-            $fileUpload->filesize = $file->getSize();
-            $fileUpload->id_content = $lastInsertedId;
-            $fileUpload->save();
+            // Using FileUploadBuilder
+            $fileUploadBuilder = new FileUploadBuilder();
+            $fileUploadBuilder
+                ->setFilename($filename)
+                ->setFilepath('/storage/' . $filepath)
+                ->setFiletype($file->getClientMimeType())
+                ->setFilesize($file->getSize())
+                ->setContentId($lastInsertedId)
+                ->save();
         }
 
         return redirect()->route("content.view", ["id" => $id, "courseId" => $courseId])->with('success', 'Content and file uploaded successfully!');
