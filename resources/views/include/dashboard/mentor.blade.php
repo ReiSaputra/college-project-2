@@ -1,6 +1,6 @@
 <div class="col-2 border menu px-4 py-4">
     <div class="logo d-flex align-items-center">
-        <img class="" src="{{ asset("assets/badubii-red.png") }}" alt="logo" width="110">
+        <img class="" src="{{ asset('assets/badubii-red.png') }}" alt="logo" width="110">
     </div>
     <a class="create-course mt-3 d-flex p-2 justify-content-evenly align-items-center text-white bg-solid-orange" href="{{ url('/mentor/' . $id . '/course/create') }}">
         <i class="fa-solid fa-plus d-flex justify-content-center align-items-center custom-i"></i>
@@ -11,7 +11,7 @@
             <i class="fa-solid fa-house custom-i d-flex justify-content-center align-items-center"></i>Dasboard</a>
     </div>
     <div class="logout">
-        <form action="{{ route("logout.post") }}" method="post">
+        <form action="{{ route('logout.post') }}" method="post">
             @csrf
             <button type="submit">Logout</button>
         </form>

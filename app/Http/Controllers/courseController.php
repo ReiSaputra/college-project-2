@@ -11,6 +11,11 @@ use Illuminate\Support\Str;
 
 class courseController extends Controller
 {
+    public function dashboard($mentorId)
+    {
+        // Logika untuk menampilkan dashboard
+        return view('dashboard.mentorDashboard', ['id' => $mentorId]);
+    }
     public function view($id)
     {
         $courses = DB::table('course as c')

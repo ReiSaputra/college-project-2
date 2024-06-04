@@ -30,7 +30,7 @@
                     <h6 class="mt-3">Overview</h6>
                     <div class="row mt-1 p-2 box-course overflow-auto">
                         {{-- For Each setiap judul coursenya --}}
-                        @foreach ($data as $dataItem)                  
+                        @foreach ($dataItem)                  
                         <div class="col-6 mt-2 mb-2">
                             @if ($dataItem->course_type == "Matematika")                        
                             <div class="course-content p-3 bg-solid-blue">

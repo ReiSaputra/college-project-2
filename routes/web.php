@@ -68,6 +68,15 @@ Route::group(['middleware' => ['auth', 'check.mentor']], function () {
 Route::get("/sign-up/mentor", function () {
     return view("auth.mentor");
 })->name("sign-in.mentor");
+Route::middleware(['auth', 'check.mentor.access'])->group(function () {
+    Route::get('/mentor/{mentor}/course/dashboard', [CourseController::class, 'dashboard'])->name('mentor.dashboard');
+});
+Route::middleware(['auth', 'check.mentor.access'])->group(function () {
+    Route::get('/mentor/{id}/course/dashboard', [CourseController::class, 'dashboard'])->name('course.view');
+});
+//redirect
+Route::get('/mentor/{mentor}/course/dashboard', [CourseController::class, 'dashboard'])->name('mentor.dashboard');
+
 
 /**
  * 404
