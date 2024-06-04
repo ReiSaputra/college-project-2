@@ -1,6 +1,6 @@
 @include("include.landingPage.headLandingPage")
-    <link rel="stylesheet" href="{{ asset("css/dashboardMentor.css") }}">
-    <title>Badubii</title>
+<link rel="stylesheet" href="{{ asset('css/dashboardMentor.css') }}">
+<title>Badubii</title>
 </head>
 <body class="poppins-regular">
     <div class="dashboard">
@@ -25,12 +25,12 @@
                             <h2 class="poppins-semibold">Halo, {{ Auth::user()->name }}#{{ Auth::user()->id }}!</h2>
                             <h6 class="poppins-light">Siap untuk mengajar hari ini?</h6>
                         </div>
-                        <img class="img-fluid-custom position-absolute" src="{{ asset("assets/DrawKit - Education Illustration Pack/SVG/5 SCENE.svg") }}" alt="">
+                        <img class="img-fluid-custom position-absolute" src="{{ asset('assets/DrawKit - Education Illustration Pack/SVG/5 SCENE.svg') }}" alt="">
                     </div>
                     <h6 class="mt-3">Overview</h6>
                     <div class="row mt-1 p-2 box-course overflow-auto">
                         {{-- For Each setiap judul coursenya --}}
-                        @foreach ($dataItem)                  
+                        @foreach ($data as $dataItem)                  
                         <div class="col-6 mt-2 mb-2">
                             @if ($dataItem->course_type == "Matematika")                        
                             <div class="course-content p-3 bg-solid-blue">
