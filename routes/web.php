@@ -69,7 +69,9 @@ Route::get("/sign-up/mentor", function () {
     return view("auth.mentor");
 })->name("sign-in.mentor");
 
-
+Route::middleware(['auth', 'check.mentor.access'])->group(function () {
+    Route::get('/mentor/{id}/course/dashboard', [CourseController::class, 'view'])->name('course.view');
+});
 /**
  * 404
  */

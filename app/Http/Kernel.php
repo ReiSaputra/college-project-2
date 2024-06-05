@@ -72,6 +72,7 @@ class Kernel extends HttpKernel
         'role' => \App\Http\Middleware\RoleMiddleware::class,
         'check.participant' => \App\Http\Middleware\CheckParticipantOwnership::class,
         'check.mentor' => \App\Http\Middleware\CheckMentor::class,
+        'check.mentor.access' => \App\Http\Middleware\CheckMentorAccess::class,
     ];
 
     
