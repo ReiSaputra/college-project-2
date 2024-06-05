@@ -18,11 +18,11 @@ class contentController extends Controller
     {
         $course = DB::table("course")->where("id", "=", $courseTitle)->select("*")->get();
         $contents = DB::table('content')
-        ->join('course', 'content.id_course', '=', 'course.id')
-        ->join('file_upload', 'content.id', '=', 'file_upload.id_content')
-        ->select('content.*', 'course.name as course_name', 'file_upload.filename', 'file_upload.filepath', 'file_upload.filetype')
-        ->where('course.id', "=", $courseTitle)
-        ->get();
+            ->join('course', 'content.id_course', '=', 'course.id')
+            ->join('file_upload', 'content.id', '=', 'file_upload.id_content')
+            ->select('content.*', 'course.name as course_name', 'file_upload.filename', 'file_upload.filepath', 'file_upload.filetype')
+            ->where('course.id', "=", $courseTitle)
+            ->get();
 
         return view("courseContent", [
             "id" => $id,
@@ -35,8 +35,7 @@ class contentController extends Controller
     {
         $course = DB::table("course")->where("id", "=", $courseTitle)->select("*")->get();
 
-        foreach($course as $getCourse)
-        {
+        foreach ($course as $getCourse) {
             $courseId = $getCourse->id;
             $courseTitle = $getCourse->name;
         }
@@ -61,31 +60,8 @@ class contentController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        
-        // $content = new Content();
-        // $content->name = $request->input('name');
-        // $content->id_course = $request->input('courseId');
-        // $content->save();
 
-        // $lastInsertedId = $content->id;
-
-        // if ($request->hasFile('file')) {
-
-
-        //     $file = $request->file('file');
-        //     $filename = time() . '_' . $file->getClientOriginalName();
-        //     $filepath = $file->storeAs('uploads', $filename, 'public');
-
-        //     $fileUpload = new FileUpload();
-        //     $fileUpload->filename = $filename;
-        //     $fileUpload->filepath = '/storage/' . $filepath;
-        //     $fileUpload->filetype = $file->getClientMimeType();
-        //     $fileUpload->filesize = $file->getSize();
-        //     $fileUpload->id_content = $lastInsertedId;
-        //     $fileUpload->save();
-        // }
-
-        // Using ContentBuilder
+        // Memakai ContentBuilder
         $contentBuilder = new ContentBuilder();
         $content = $contentBuilder
             ->setName($request->input('name'))
@@ -99,7 +75,7 @@ class contentController extends Controller
             $filename = time() . '_' . $file->getClientOriginalName();
             $filepath = $file->storeAs('uploads', $filename, 'public');
 
-            // Using FileUploadBuilder
+            // Memakai FileUploadBuilder
             $fileUploadBuilder = new FileUploadBuilder();
             $fileUploadBuilder
                 ->setFilename($filename)
@@ -111,6 +87,5 @@ class contentController extends Controller
         }
 
         return redirect()->route("content.view", ["id" => $id, "courseId" => $courseId])->with('success', 'Content and file uploaded successfully!');
-    
     }
 }
