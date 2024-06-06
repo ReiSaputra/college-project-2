@@ -6,6 +6,11 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use App\Models\Course;
 
 class Controller extends BaseController
 {
@@ -23,7 +28,6 @@ class Controller extends BaseController
             ->where('c.id_user', Auth::id())
             ->select('c.*')
             ->get();
-
         return view("dashboard.mentorDashboard", [
             "id" => $id,
             "data" => $courses
@@ -48,6 +52,8 @@ class Controller extends BaseController
             return redirect()->back()->withErrors($validate)->withInput();
         }
 
+        dd($request->all()); // Tambahkan ini untuk melihat data request
+        
         Course::create([
             'name' => $request->name,
             'description' => $request->description,

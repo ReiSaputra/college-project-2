@@ -31,7 +31,7 @@
                     </div>
                     <div class="d-flex mt-3 border justify-content-between align-items-center">
                         <h6 class="">Overview</h6>
-                        {{-- <a class="text-decoration-none" href="{{ $courseTitle }}/add">Add Content</a> --}}
+                        <a class="text-decoration-none" href="{{ $courseTitle }}/add">Add Content</a>
                     </div>
                     <div class="row mt-1 p-2 box-course overflow-auto">
                         @foreach($contents as $content)

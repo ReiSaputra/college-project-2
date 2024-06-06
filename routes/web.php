@@ -7,6 +7,7 @@ use App\Http\Controllers\participantController;
 use App\Http\Controllers\exampleMailController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 
 Route::get('/', function () {
     return view("layouts.landingPage");
@@ -59,7 +61,8 @@ Route::group(['middleware' => ['auth', 'check.mentor']], function () {
     Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
     Route::get('/mentor/{id}/course/create', [courseController::class, "formCourse"])->name("course.form");
     Route::post('/mentor/{id}/course/create', [courseController::class, "createCourse"])->name("course.controller");
-    Route::get("/mentor/{id}/course/{courseId}", [contentController::class, "view"])->name("content.view");
+    Route::get("/mentor/{id}/course/{courseId}", [contentController::class, "viewCourseContent"])->name("content.view");
+    // Route::get('/mentor/{id}/course/{courseTitle}', [contentController::class, 'viewCourseContent'])->name('mentor.course.view');
     Route::get("/mentor/{id}/course/{courseId}/add", [contentController::class, "viewContentForm"])->name("content.add.form");
     Route::post("/mentor/{id}/course/{courseId}/add", [contentController::class, "addContent"])->name("content.add");
 });
@@ -70,7 +73,13 @@ Route::get("/sign-up/mentor", function () {
 })->name("sign-in.mentor");
 
 Route::middleware(['auth', 'check.mentor.access'])->group(function () {
-    Route::get('/mentor/{id}/course/dashboard', [CourseController::class, 'view'])->name('course.view');
+    Route::get("/mentor/{id}/course/dashboard", [courseController::class, "view"])->name("course.view");
+    Route::get('/mentor/{id}/course/create', [courseController::class, "formCourse"])->name("course.form");
+    Route::post('/mentor/{id}/course/create', [courseController::class, "createCourse"])->name("course.controller");
+    Route::get("/mentor/{id}/course/{courseId}", [contentController::class, "viewCourseContent"])->name("content.view");
+    // Route::get('/mentor/{id}/course/{courseTitle}', [contentController::class, 'viewCourseContent'])->name('mentor.course.view');
+    Route::get("/mentor/{id}/course/{courseId}/add", [contentController::class, "viewContentForm"])->name("content.add.form");
+    Route::post("/mentor/{id}/course/{courseId}/add", [contentController::class, "addContent"])->name("content.add");
 });
 /**
  * 404
