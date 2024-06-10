@@ -4,7 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "5622c3340f8f33cc4fef59e8e193425f",
+=======
+<<<<<<< HEAD
+    "content-hash": "5622c3340f8f33cc4fef59e8e193425f",
+=======
+    "content-hash": "b742edd8b56a40bc09a8a8b05d278a62",
+>>>>>>> 779ea9a3feb694e953d5c7b4a8cdef1ee3810b2e
+>>>>>>> 37520a68e75d3c7bece57483c0b2d7fb4d88f3d0
     "packages": [
         {
             "name": "brick/math",
@@ -6667,6 +6675,7 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "phpmyadmin/sql-parser",
             "version": "5.9.0",
             "source": {
@@ -6676,6 +6685,80 @@
             },
             "dist": {
                 "type": "zip",
+=======
+<<<<<<< HEAD
+            "name": "phpmyadmin/sql-parser",
+            "version": "5.9.0",
+=======
+            "name": "phpstan/phpstan",
+            "version": "1.11.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "e64220a05c1209fc856d58e789c3b7a32c0bb9a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e64220a05c1209fc856d58e789c3b7a32c0bb9a5",
+                "reference": "e64220a05c1209fc856d58e789c3b7a32c0bb9a5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-05-31T13:53:37+00:00"
+        },
+        {
+            "name": "phpunit/php-code-coverage",
+            "version": "10.1.12",
+>>>>>>> 779ea9a3feb694e953d5c7b4a8cdef1ee3810b2e
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpmyadmin/sql-parser.git",
+                "reference": "011fa18a4e55591fac6545a821921dd1d61c6984"
+            },
+            "dist": {
+                "type": "zip",
+>>>>>>> 37520a68e75d3c7bece57483c0b2d7fb4d88f3d0
                 "url": "https://api.github.com/repos/phpmyadmin/sql-parser/zipball/011fa18a4e55591fac6545a821921dd1d61c6984",
                 "reference": "011fa18a4e55591fac6545a821921dd1d61c6984",
                 "shasum": ""

@@ -19,4 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post("/select", [mobileController::class, "selectCourse"]);
+Route::get("/select", [mobileController::class, "selectCourse"]);
+Route::post("/store", [mobileController::class, "storeCourse"]);
+Route::put("/update/{id}", [mobileController::class, "updateCourse"]);
+Route::delete("/delete", [mobileController::class, "deleteCourse"]);
