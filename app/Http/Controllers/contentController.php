@@ -62,28 +62,6 @@ class contentController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
         
-        // $content = new Content();
-        // $content->name = $request->input('name');
-        // $content->id_course = $request->input('courseId');
-        // $content->save();
-
-        // $lastInsertedId = $content->id;
-
-        // if ($request->hasFile('file')) {
-
-
-        //     $file = $request->file('file');
-        //     $filename = time() . '_' . $file->getClientOriginalName();
-        //     $filepath = $file->storeAs('uploads', $filename, 'public');
-
-        //     $fileUpload = new FileUpload();
-        //     $fileUpload->filename = $filename;
-        //     $fileUpload->filepath = '/storage/' . $filepath;
-        //     $fileUpload->filetype = $file->getClientMimeType();
-        //     $fileUpload->filesize = $file->getSize();
-        //     $fileUpload->id_content = $lastInsertedId;
-        //     $fileUpload->save();
-        // }
 
         // Using ContentBuilder
         $contentBuilder = new ContentBuilder();
