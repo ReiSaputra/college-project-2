@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 class contentController extends Controller
 {
     //
-    public function view(Request $request, $id, $courseTitle)
+    public function viewCourseContent(Request $request, $id, $courseTitle)
     {
         $course = DB::table("course")->where("id", "=", $courseTitle)->select("*")->get();
         $contents = DB::table('content')
