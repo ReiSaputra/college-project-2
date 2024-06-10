@@ -30,7 +30,7 @@ class mobileController extends Controller
             200
         );
     }
-    public function createCourse(Request $request)
+    public function storeCourse(Request $request)
     {
         // Validate request data
         $validator = Validator::make($request->all(), [
@@ -73,8 +73,59 @@ class mobileController extends Controller
             ], 500);
         }
     }
-    public function updateCourse()
+    public function updateCourse(Request $request, $id)
     {
-        
+        // Validate request data
+        $validator = Validator::make($request->all(), [
+            'name' => 'string|max:255',
+            'description' => 'string',
+            'course_type' => 'string',
+            'id_user' => 'integer|exists:users,id', // User must exist
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 400,
+                'message' => 'Validation errors',
+                'errors' => $validator->errors()
+            ], 400);
+        }
+
+        try {
+            $course = Course::findOrFail($id); // Find the course by ID or throw 404 error
+
+            // Update course attributes if they exist in the request
+            if ($request->has('name'))
+                $course->name = $request->name;
+            if ($request->has('description'))
+                $course->description = $request->description;
+            if ($request->has('course_type'))
+                $course->course_type = $request->course_type;
+            if ($request->has('id_user'))
+                $course->id_user = $request->id_user;
+
+            $course->save();
+
+            return response()->json([
+                'status' => 200,
+                'message' => 'Course updated successfully',
+                'data' => $course,
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 500,
+                'message' => 'Internal server error',
+                'error' => $th->getMessage(),
+            ], 500);
+        }
     }
+    // public function deleteCourse($id)
+    // {
+    //     try {
+    //         $delete = DB::table("course")->delete($id);
+    //     } catch (\Throwable $th) {
+    //         throw $th;
+    //     }
+
+    // }
 }
