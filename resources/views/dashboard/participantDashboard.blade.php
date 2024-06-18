@@ -34,22 +34,22 @@
                         <div class="col-6 mt-2 mb-2">
                             @if ($dataItem->course_type == "Matematika")                        
                             <div class="course-content p-3 bg-solid-blue">
-                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/participant/' . Auth::user()->id . '/course/' . $dataItem->id) }}">{{ $dataItem->name }}</a>
                                 <p class="text-white">{{ $dataItem->course_type }}</p>
                             </div>
                             @elseif ($dataItem->course_type == "Bahasa Inggris")
                             <div class="course-content p-3 bg-solid-yellow">
-                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/participant/' . Auth::user()->id . '/course/' . $dataItem->id) }}">{{ $dataItem->name }}</a>
                                 <p class="text-white">{{ $dataItem->course_type }}</p>
                             </div>
                             @elseif ($dataItem->course_type == "Sains")
                             <div class="course-content p-3 bg-solid-green">
-                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/participant/' . Auth::user()->id . '/course/' . $dataItem->id) }}">{{ $dataItem->name }}</a>
                                 <p class="text-white">{{ $dataItem->course_type }}</p>
                             </div>
                             @else
                             <div class="course-content p-3 bg-solid-orange">
-                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/mentor/' . Auth::user()->id . '/course/' . $dataItem->name) }}">{{ $dataItem->name }}</a>
+                                <a class="text-white poppins-semibold text-decoration-underline" href="{{ url('/participant/' . Auth::user()->id . '/course/' . $dataItem->id) }}">{{ $dataItem->name }}</a>
                                 <p class="text-white">{{ $dataItem->course_type }}</p>
                             </div>
                             @endif

@@ -55,6 +55,7 @@ Route::group(['middleware' => ['auth', 'check.participant']], function () {
     Route::get('/participant/{id}/course/dashboard', [participantController::class, "index"])->name("participant.dashboard");
     Route::get("/participant/{id}/course/join", [participantController::class, "view"])->name("course.view");
     Route::post("/participant/{id}/course/join", [participantController::class, "joinCourse"])->name("join.course");
+    Route::get("/participant/{id}/course/{courseId}", [participantController::class, "showMaterialCourse"])->name("material.course");
 });
 
 Route::group(['middleware' => ['auth', 'check.mentor']], function () {

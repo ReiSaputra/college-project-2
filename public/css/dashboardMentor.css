@@ -58,6 +58,10 @@ p {
     border: 1.5px solid #ffd7b5;
 }
 
+.content-list {
+    height: 100px;
+}
+
 .textarea-custom {
     /* background-color: blue; */
     height: 300px;

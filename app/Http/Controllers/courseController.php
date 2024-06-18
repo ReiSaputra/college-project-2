@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
+use App\Models\CompositeCourse;
+use App\Models\SimpleCourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 use Illuminate\Support\Str;
 
-class courseController extends Controller
+class CourseController extends Controller
 {
     public function dashboard($mentorId)
     {
-        // Logika untuk menampilkan dashboard
         return view('dashboard.mentorDashboard', ['id' => $mentorId]);
     }
+
     public function view($id)
     {
         $courses = DB::table('course as c')
@@ -24,20 +25,22 @@ class courseController extends Controller
             ->select('c.*')
             ->get();
 
+        $courseComponents = $courses->map(function ($courseData) {
+            $course = new SimpleCourse((array) $courseData);
+            return $course;
+        });
+
         return view("dashboard.mentorDashboard", [
             "id" => $id,
-            "data" => $courses
+            "data" => $courseComponents
         ]);
     }
+
     public function formCourse($id)
     {
-        return view(
-            "createCourse",
-            [
-                "id" => $id
-            ]
-        );
+        return view("createCourse", ["id" => $id]);
     }
+
     public function createCourse(Request $request, $id)
     {
         $validate = FacadesValidator::make($request->all(), [
@@ -51,13 +54,15 @@ class courseController extends Controller
             return redirect()->back()->withErrors($validate)->withInput();
         }
 
-        Course::create([
+        $course = new SimpleCourse([
             'name' => $request->name,
             'description' => $request->description,
             'course_type' => $request->type,
             'token' => Str::random(15),
             'id_user' => $id,
         ]);
+
+        $course->save();
 
         return redirect()->route("course.view", ["id" => $id]);
     }

@@ -54,5 +54,21 @@ class participantController extends Controller
             return redirect()->back()->withErrors($course)->withInput();
         }
     }
+    public function showMaterialCourse($id, $courseId)
+    {
+        $course = DB::table("course")->where("id", "=", $courseId)->select("*")->get();
+        $contents = DB::table('content')
+            ->join('course', 'content.id_course', '=', 'course.id')
+            ->join('file_upload', 'content.id', '=', 'file_upload.id_content')
+            ->select('content.*', 'course.name as course_name', 'file_upload.filename', 'file_upload.filepath', 'file_upload.filetype')
+            ->where('course.id', "=", $courseId)
+            ->get();
 
+        return view("participantContent", [
+            "id" => $id,
+            "courseId" => $courseId,
+            "course" => $course,
+            "contents" => $contents
+        ]);
+    }
 }
