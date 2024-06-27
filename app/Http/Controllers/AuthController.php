@@ -7,6 +7,7 @@ use App\Models\participant;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 use Illuminate\Validation\Validator;
@@ -15,7 +16,7 @@ class AuthController extends Controller
 {
     public function registerStudent(Request $request)
     {
-        $validator = FacadesValidator::make($request->all(),[
+        $validator = FacadesValidator::make($request->all(), [
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'role' => 'required|string',
@@ -23,16 +24,21 @@ class AuthController extends Controller
 
         // @dd($validator);
 
-        if ($validator->fails()){
+        if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $user = User::create([
-
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
         ]);
+
+        DB::table('users')
+            ->where('id', $user->id)
+            ->update([
+                'name' => "Guest" . $user->id
+            ]);
 
         return redirect()->route('login')->with('success', 'Student registered successfully');
     }
@@ -62,7 +68,7 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
-        return view ('auth.login');
+        return view('auth.login');
     }
 
     public function login(Request $request)
@@ -76,9 +82,9 @@ class AuthController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        
+
         $credentials = $request->only('email', 'password');
-        
+
         if (Auth::attempt($credentials)) {
             // Authentication passed
             $user = Auth::user();
