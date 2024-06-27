@@ -7,6 +7,7 @@ use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class mobileController extends Controller
 {
@@ -55,7 +56,7 @@ class mobileController extends Controller
         $course->id_user = $request->id_user;
 
         // Generate unique token (consider stronger hashing for production)
-        $course->token = uniqid();
+        $course->token = Str::random(15);
 
         try {
             $course->save();
@@ -119,13 +120,19 @@ class mobileController extends Controller
             ], 500);
         }
     }
-    // public function deleteCourse($id)
-    // {
-    //     try {
-    //         $delete = DB::table("course")->delete($id);
-    //     } catch (\Throwable $th) {
-    //         throw $th;
-    //     }
-
-    // }
+    public function deleteCourse($id)
+    {
+        try {
+            $delete = DB::table("course")->delete($id);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Delete Success',
+                'error' => $th->getMessage()
+            ]);
+        }
+        return response()->json([
+            'status' => 200,
+        'message' => 'Delete Success']);
+    }
 }

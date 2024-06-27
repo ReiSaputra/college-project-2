@@ -13,6 +13,7 @@ class participant extends Model
         'name',
         'email',
         'password',
-        'id_status'
+        'id_status',
+        'profile_pic'
     ];
 }

@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->timestamp('email_verified_at')->nullable();
             $table->string("password");
             $table->string("email")->unique();
+            $table->string('profile_pic')->nullable();
             $table->unsignedBigInteger("id_status");
             $table->timestamps();
             $table->foreign("id_status")->references("id")->on("status")->onDelete("cascade");
