@@ -8,6 +8,8 @@ use App\Http\Controllers\exampleMailController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +70,11 @@ Route::group(['middleware' => ['auth', 'check.mentor']], function () {
     Route::post("/mentor/{id}/course/{courseId}/add", [contentController::class, "addContent"])->name("content.add");
 });
 
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+    Route::post('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
+});
 
 // Mentor
 Route::get("/sign-up/mentor", function () {

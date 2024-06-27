@@ -12,7 +12,7 @@
                         <div class="profile-box d-flex justify-content-end">
                             <div class="profile border d-flex text-end align-items-center">
                                 <div class="name me-2">
-                                    <p class="border poppins-semibold"><a href="">{{ $name }}</a></p>
+                                    <p class="border poppins-semibold"><a href="{{ route ('profile') }}">{{ Auth::user()->name }}#{{ Auth::user()->id }}</a></p>
                                     <p class="border poppins-light">{{ Auth::user()->role }}</p>
                                 </div>
                                 <img class="rounded-circle profile-pic" src="{{ Auth::user()->profile_pic }}" alt="">

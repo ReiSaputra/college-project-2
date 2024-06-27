@@ -57,6 +57,7 @@ class mobileController extends Controller
 
         // Generate unique token (consider stronger hashing for production)
         $course->token = Str::random(15);
+        $course->token = Str::random(15);
 
         try {
             $course->save();
@@ -125,8 +126,14 @@ class mobileController extends Controller
         try {
             $delete = DB::table("course")->delete($id);
         } catch (\Throwable $th) {
-            throw $th;
+            return response()->json([
+                'status' => 200,
+                'message' => 'Delete Success',
+                'error' => $th->getMessage()
+            ]);
         }
-
+        return response()->json([
+            'status' => 200,
+        'message' => 'Delete Success']);
     }
 }
