@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Course;
+use App\Models\SimpleCourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class mobileController extends Controller
 {
@@ -48,14 +49,14 @@ class mobileController extends Controller
             ], 400);
         }
 
-        $course = new Course;
+        $course = new SimpleCourse();
         $course->name = $request->name;
         $course->description = $request->description;
         $course->course_type = $request->course_type;
         $course->id_user = $request->id_user;
 
         // Generate unique token (consider stronger hashing for production)
-        $course->token = uniqid();
+        $course->token = Str::random(15);
 
         try {
             $course->save();
@@ -92,7 +93,7 @@ class mobileController extends Controller
         }
 
         try {
-            $course = Course::findOrFail($id); // Find the course by ID or throw 404 error
+            $course = SimpleCourse::findOrFail($id); // Find the course by ID or throw 404 error
 
             // Update course attributes if they exist in the request
             if ($request->has('name'))
@@ -119,13 +120,13 @@ class mobileController extends Controller
             ], 500);
         }
     }
-    // public function deleteCourse($id)
-    // {
-    //     try {
-    //         $delete = DB::table("course")->delete($id);
-    //     } catch (\Throwable $th) {
-    //         throw $th;
-    //     }
+    public function deleteCourse($id)
+    {
+        try {
+            $delete = DB::table("course")->delete($id);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
 
-    // }
+    }
 }
