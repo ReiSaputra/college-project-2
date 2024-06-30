@@ -1,1 +1,3 @@
-helloword
+<?php
+    header('Location: /public');
+?>
